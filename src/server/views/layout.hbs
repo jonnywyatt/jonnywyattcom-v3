@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/css/main.css' />
+    <script src="/js/client.js" defer></script>
+  </head>
+  <body>
+    {{{body}}}
+
+    {{#if appState}}
+      <script>
+        window.$REDUX_STATE = {{{appState}}};
+      </script>
+    {{/if}}
+  </body>
+</html>

@@ -1,0 +1,14 @@
+@import "typography";
+@import "grid";
+
+.view {
+  display: none;
+}
+
+$sections: about contact articles article;
+
+@each $section in $sections {
+  [data-view="#{$section}"] .view.#{$section} {
+    display: block;
+  }
+}
