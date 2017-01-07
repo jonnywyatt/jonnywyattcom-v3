@@ -16,7 +16,7 @@ var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb:
 
 // The http server will listen to an appropriate port, or default to
 // port 5000.
-var theport = process.env.PORT || 5000;
+// const theport = process.env.PORT || 5000;
 
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
@@ -25,6 +25,7 @@ _mongoose2.default.connect(uristring, function (err, res) {
     _logger2.default.error('ERROR connecting to: ' + uristring + '. ' + err);
   } else {
     _logger2.default.info('Succeeded connected to: ' + uristring);
+    _logger2.default.info(res);
   }
 });
 //# sourceMappingURL=api-article.js.map

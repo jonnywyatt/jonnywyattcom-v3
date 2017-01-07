@@ -10,7 +10,7 @@ const uristring =
 
 // The http server will listen to an appropriate port, or default to
 // port 5000.
-const theport = process.env.PORT || 5000;
+// const theport = process.env.PORT || 5000;
 
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
@@ -19,5 +19,6 @@ mongoose.connect(uristring, (err, res) => {
     logger.error('ERROR connecting to: ' + uristring + '. ' + err);
   } else {
     logger.info('Succeeded connected to: ' + uristring);
+    logger.info(res);
   }
 });
