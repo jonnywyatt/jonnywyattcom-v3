@@ -58,16 +58,20 @@ var NavBar = function NavBar(props) {
                   { className: "l-inline-container" },
                   _react2.default.createElement(
                     "div",
-                    { className: "l-vcenter l-vcenter--two-thirds" },
+                    { className: "l-vcenter l-vcenter--one-third" },
                     _react2.default.createElement(
                       "a",
                       {
-                        className: "t-nav-jobs tabs__tab navbar__link" + (props.activeRouteName === 'about' ? ' active' : ''),
-                        href: "/about",
+                        className: "t-nav-jobs tabs__tab navbar__link" + (props.activeRouteName === 'articles' ? ' active' : ''),
+                        href: "/articles",
                         onClick: props.startRouteChange
                       },
-                      "About"
-                    ),
+                      "Articles"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "l-vcenter l-vcenter--one-third" },
                     _react2.default.createElement(
                       "a",
                       {
@@ -76,6 +80,19 @@ var NavBar = function NavBar(props) {
                         onClick: props.startRouteChange
                       },
                       "Contact"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "l-vcenter l-vcenter--one-third" },
+                    _react2.default.createElement(
+                      "a",
+                      {
+                        className: "t-nav-jobs tabs__tab navbar__link" + (props.activeRouteName === 'about' ? ' active' : ''),
+                        href: "/about",
+                        onClick: props.startRouteChange
+                      },
+                      "About"
                     )
                   )
                 )

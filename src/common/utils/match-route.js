@@ -14,6 +14,10 @@ export default (path, cb) => {
       routeData.routeName = 'contact';
       break;
 
+    case '/articles/new':
+      routeData.routeName = 'article-new';
+      break;
+
     case '/articles':
       routeData.routeName = 'articles';
       routeData.dataNeed = 'articles';
@@ -26,7 +30,7 @@ export default (path, cb) => {
         routeData.routeName = 'article';
         routeData.dataNeed = 'article';
         routeData.stateKeyToCompare = 'articleId';
-        [routeData.path, routeData.articleId] = matched;
+        routeData.dataNeedParam = matched[1];
         break;
       }
       return cb({

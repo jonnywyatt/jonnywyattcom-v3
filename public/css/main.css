@@ -181,3 +181,6 @@ p {
 
 [data-view="article"] .view.article {
   display: block; }
+
+[data-view="article-new"] .view.article-new {
+  display: block; }

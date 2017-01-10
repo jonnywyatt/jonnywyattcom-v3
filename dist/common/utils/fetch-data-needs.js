@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = function (dispatch, matchedRoute) {
   if (matchedRoute.dataNeed) {
-    return dispatch(_dataNeeds2.default[matchedRoute.dataNeed](matchedRoute)).catch(function (err) {
+    return dispatch(_dataNeeds2.default[matchedRoute.dataNeed](matchedRoute.dataNeedParam)).catch(function (err) {
       _logger2.default.error('Error fetching data needs ' + matchedRoute.dataNeed + '.', { stack: err.stack });
       throw err;
     });

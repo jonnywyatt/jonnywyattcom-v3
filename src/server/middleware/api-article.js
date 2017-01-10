@@ -1,24 +1,42 @@
-import mongoose from 'mongoose';
+import slug from 'slug';
+import ModelArticle from './helpers/model-article';
 import logger from '../../common/utils/logger';
 
-// Here we find an appropriate database to connect to, defaulting to
-// localhost if we don't find one.
-const uristring =
-  process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/HelloMongoose';
-
-// The http server will listen to an appropriate port, or default to
-// port 5000.
-// const theport = process.env.PORT || 5000;
-
-// Makes connection asynchronously.  Mongoose will queue up database
-// operations and release them when the connection is complete.
-mongoose.connect(uristring, (err, res) => {
-  if (err) {
-    logger.error('ERROR connecting to: ' + uristring + '. ' + err);
-  } else {
-    logger.info('Succeeded connected to: ' + uristring);
-    logger.info(res);
-  }
-});
+export default () => {
+  return {
+    getBySlug: (req, res) => {
+      ModelArticle.find({ slug: req.params.slug }).lean().exec((err, articles) => {
+        if (err) {
+          logger.error(err);
+          return res.status(500);
+        }
+        res.json(articles[0] || {});
+      });
+    },
+    getAll: (req, res) => {
+      ModelArticle.find().lean().exec((err, articles) => {
+        if (err) {
+          logger.error(err);
+          return res.status(500);
+        }
+        res.json(articles);
+      });
+    },
+    post: (req, res) => {
+      const article = new ModelArticle({
+        slug: slug(req.body.title, { lower: true, symbols: true }),
+        createdDate: new Date().toISOString(),
+        title: req.body.title,
+        contents: req.body.contents
+      });
+      article.save((err, article) => {
+        if (err) {
+          logger.error(err);
+          return res.status(500);
+        }
+        if (req.xhr) return res.status(201).json(article);
+        return res.redirect(`/articles/${article.slug}`);
+      });
+    }
+  };
+};

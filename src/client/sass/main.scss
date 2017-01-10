@@ -5,7 +5,7 @@
   display: none;
 }
 
-$sections: about contact articles article;
+$sections: about contact articles article article-new;
 
 @each $section in $sections {
   [data-view="#{$section}"] .view.#{$section} {

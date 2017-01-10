@@ -14,21 +14,27 @@ var actions = {
   articles: function articles() {
     return function (dispatch, getState) {
       var state = getState();
-      var endpoint = typeof window === 'undefined' ? state.apiEndpointAbsolute : state.apiEndpointRelative;
+      var endpoint = typeof window === 'undefined' ? state.apiEndpointRootAbsolute : state.apiEndpointRootRelative;
+      endpoint = endpoint + '/articles';
 
       return (0, _request2.default)({ endpoint: endpoint, state: state }).then(function (response) {
-        dispatch(actions.receiveArticle(response));
+        dispatch(actions.receiveArticles(response.data));
+      }).catch(function () {
+        dispatch(actions.errorApi('An error occurred retrieving articles'));
       });
     };
   },
 
-  article: function article() {
+  article: function article(slug) {
     return function (dispatch, getState) {
       var state = getState();
-      var endpoint = typeof window === 'undefined' ? state.apiEndpointAbsolute : state.apiEndpointRelative;
+      var endpoint = typeof window === 'undefined' ? state.apiEndpointRootAbsolute : state.apiEndpointRootRelative;
+      endpoint = endpoint + '/articles/' + slug;
 
       return (0, _request2.default)({ endpoint: endpoint, state: state }).then(function (response) {
-        dispatch(actions.receiveArticle(response));
+        dispatch(actions.receiveArticle(response.data));
+      }).catch(function () {
+        dispatch(actions.errorApi('An error occurred retrieving article: ' + slug));
       });
     };
   },
@@ -38,6 +44,22 @@ var actions = {
       type: 'RECEIVE_ARTICLE',
       stateKey: 'article',
       data: article
+    };
+  },
+
+  receiveArticles: function receiveArticles(articles) {
+    return {
+      type: 'RECEIVE_ARTICLES',
+      stateKey: 'articles',
+      data: articles
+    };
+  },
+
+  errorApi: function errorApi(msg) {
+    return {
+      type: 'ERROR_API',
+      stateKey: 'errorApi',
+      data: msg
     };
   }
 };

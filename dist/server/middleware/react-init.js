@@ -53,7 +53,7 @@ exports.default = function (appConfig) {
             appState: JSON.stringify(store.getState()).replace(/<\//g, '\\x3C/')
           });
         }).catch(function (err) {
-          _logger2.default.logError(err, 'Error during rendering of React component tree');
+          _logger2.default.error(err);
           res.render('error', { error: err.displayError || 'Application rendering error', noAnalytics: true });
         });
       });

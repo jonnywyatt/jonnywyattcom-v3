@@ -14,6 +14,18 @@ var _NavBar = require('../containers/NavBar');
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
+var _Articles = require('../containers/Articles');
+
+var _Articles2 = _interopRequireDefault(_Articles);
+
+var _Article = require('../containers/Article');
+
+var _Article2 = _interopRequireDefault(_Article);
+
+var _NewArticle = require('./NewArticle/NewArticle');
+
+var _NewArticle2 = _interopRequireDefault(_NewArticle);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -53,7 +65,14 @@ var App = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'view articles' },
-            'Articles'
+            'Articles',
+            _react2.default.createElement(_Articles2.default, null)
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'view article' },
+            'Article',
+            _react2.default.createElement(_Article2.default, null)
           ),
           _react2.default.createElement(
             'div',
@@ -67,8 +86,9 @@ var App = function (_Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'view article' },
-            'Article'
+            { className: 'view article-new' },
+            'New article',
+            _react2.default.createElement(_NewArticle2.default, null)
           )
         )
       );

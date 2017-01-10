@@ -20,20 +20,32 @@ const NavBar = props => (
             <div className="navbar__links">
               <div className="tabs text-sm">
                 <div className="l-inline-container">
-                  <div className="l-vcenter l-vcenter--two-thirds">
+                  <div className="l-vcenter l-vcenter--one-third">
                     <a
-                      className={`t-nav-jobs tabs__tab navbar__link${props.activeRouteName === 'about' ? ' active' : ''}`}
-                      href="/about"
+                      className={`t-nav-jobs tabs__tab navbar__link${props.activeRouteName === 'articles' ? ' active' : ''}`}
+                      href="/articles"
                       onClick={props.startRouteChange}
                     >
-                      About
+                      Articles
                     </a>
+                  </div>
+                  <div className="l-vcenter l-vcenter--one-third">
+
                     <a
                       className={`t-nav-job-stats tabs__tab navbar__link${props.activeRouteName === 'contact' ? ' active' : ''}`}
                       href="/contact"
                       onClick={props.startRouteChange}
                     >
                       Contact
+                    </a>
+                  </div>
+                  <div className="l-vcenter l-vcenter--one-third">
+                    <a
+                      className={`t-nav-jobs tabs__tab navbar__link${props.activeRouteName === 'about' ? ' active' : ''}`}
+                      href="/about"
+                      onClick={props.startRouteChange}
+                    >
+                      About
                     </a>
                   </div>
                 </div>

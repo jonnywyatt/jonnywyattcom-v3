@@ -32,7 +32,7 @@ export default appConfig => ({
           });
         })
         .catch((err) => {
-          logger.logError(err, 'Error during rendering of React component tree');
+          logger.error(err);
           res.render('error', { error: err.displayError || 'Application rendering error', noAnalytics: true });
         });
     });

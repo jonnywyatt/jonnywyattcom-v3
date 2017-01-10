@@ -1,15 +1,13 @@
-import reactInit from './middleware/react-init';
+import express from 'express';
+import exphbs from 'express-handlebars';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
 import logger from '../common/utils/logger';
-
-const express = require('express');
-const exphbs = require('express-handlebars');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+import reactInit from './middleware/react-init';
+import apiArticleFactory from './middleware/api-article';
 
 const app = express();
-
-// view engine setup
 const hbs = exphbs.create({
   extname: '.hbs',
   defaultLayout: path.join(__dirname, '../../src/server/views/layout')
@@ -18,7 +16,6 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '../../src/server/views'));
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -26,6 +23,12 @@ app.use(express.static(path.join(__dirname, '../../public')));
 
 const env = app.get('env');
 const appConfig = require(`../../config/${env}.json`);
+const apiArticle = apiArticleFactory(appConfig);
+
+app.get('/api/articles/:slug', apiArticle.getBySlug);
+app.get('/api/articles', apiArticle.getAll);
+app.post('/api/articles', apiArticle.post);
+
 app.get('*', reactInit(appConfig).init);
 logger.info('Application started on port 3000');
 app.listen(3000);
