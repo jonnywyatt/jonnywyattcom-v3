@@ -1,4 +1,3 @@
-import slug from 'slug';
 import ModelArticle from './helpers/model-article';
 import logger from '../../common/utils/logger';
 
@@ -24,7 +23,7 @@ export default () => {
     },
     post: (req, res) => {
       const article = new ModelArticle({
-        slug: slug(req.body.title, { lower: true, symbols: true }),
+        slug: req.body.slug,
         createdDate: new Date().toISOString(),
         title: req.body.title,
         contents: req.body.contents

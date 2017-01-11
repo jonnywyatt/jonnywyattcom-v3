@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slug = require('slug');
-
-var _slug2 = _interopRequireDefault(_slug);
-
 var _modelArticle = require('./helpers/model-article');
 
 var _modelArticle2 = _interopRequireDefault(_modelArticle);
@@ -40,7 +36,7 @@ exports.default = function () {
     },
     post: function post(req, res) {
       var article = new _modelArticle2.default({
-        slug: (0, _slug2.default)(req.body.title, { lower: true, symbols: true }),
+        slug: req.body.slug,
         createdDate: new Date().toISOString(),
         title: req.body.title,
         contents: req.body.contents

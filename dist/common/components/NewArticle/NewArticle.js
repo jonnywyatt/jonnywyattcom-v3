@@ -20,6 +20,12 @@ var Article = function Article() {
       _react2.default.createElement(
         "div",
         null,
+        "URL slug: ",
+        _react2.default.createElement("input", { type: "text", name: "slug" })
+      ),
+      _react2.default.createElement(
+        "div",
+        null,
         "Title: ",
         _react2.default.createElement("input", { type: "text", name: "title" })
       ),
