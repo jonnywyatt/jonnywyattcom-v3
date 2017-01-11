@@ -39,6 +39,7 @@ var hbs = _expressHandlebars2.default.create({
   extname: '.hbs',
   defaultLayout: _path2.default.join(__dirname, '../../src/server/views/layout')
 });
+app.set('port', process.env.PORT || 5000);
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', _path2.default.join(__dirname, '../../src/server/views'));
@@ -57,8 +58,9 @@ app.get('/api/articles', apiArticle.getAll);
 app.post('/api/articles', apiArticle.post);
 
 app.get('*', (0, _reactInit2.default)(appConfig).init);
-_logger2.default.info('Application started on port 3000');
-app.listen(3000);
+app.listen(app.get('port'), function () {
+  _logger2.default.info('Node app is running on port', app.get('port'));
+});
 
 module.exports = app;
 //# sourceMappingURL=init.js.map

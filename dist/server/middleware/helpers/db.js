@@ -14,7 +14,7 @@ var _logger2 = _interopRequireDefault(_logger);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/jonnywyattcom';
+var uristring = process.env.MONGODB_URI || 'mongodb://localhost/jonnywyattcom';
 
 _mongoose2.default.connect(uristring, function (err, res) {
   if (err) {

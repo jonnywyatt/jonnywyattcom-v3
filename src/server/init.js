@@ -12,6 +12,7 @@ const hbs = exphbs.create({
   extname: '.hbs',
   defaultLayout: path.join(__dirname, '../../src/server/views/layout')
 });
+app.set('port', (process.env.PORT || 5000));
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '../../src/server/views'));
@@ -30,7 +31,8 @@ app.get('/api/articles', apiArticle.getAll);
 app.post('/api/articles', apiArticle.post);
 
 app.get('*', reactInit(appConfig).init);
-logger.info('Application started on port 3000');
-app.listen(3000);
+app.listen(app.get('port'), function() {
+  logger.info('Node app is running on port', app.get('port'));
+});
 
 module.exports = app;
