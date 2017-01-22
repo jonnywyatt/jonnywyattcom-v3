@@ -1,0 +1,46 @@
+%icon {
+  display: inline-block;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-indent: -10rem;
+  overflow: hidden;
+  // use rem instead of em as font size might be set to zero to hide text
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: middle;
+}
+
+@mixin icon-content($name) {
+  @extend %icon;
+  background-image: url(../svg/#{$name}.svg);
+}
+
+$icons: envelope github globe linkedin phone pin;
+
+@each $icon in $icons {
+  .icon-#{$icon} {
+    @include icon-content($icon);
+  }
+}
+
+.icon-text-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 1.8em;
+  > i {
+    position: absolute;
+    padding: 0;
+    border: 0;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    &.icon-first-line {
+      top: 0.7em;
+    }
+  }
+  .icon-text-container__text-block {
+    display: block;
+  }
+}

@@ -8,11 +8,14 @@ import del from 'del' ;
 import Browserify from 'browserify' ;
 import babelify from 'babelify' ;
 import VinylSourceStream from 'vinyl-source-stream';
+import browserSync from 'browser-sync';
+browserSync.create();
 
 const bundle = 'client.js';
 const sourcePathJS = './src/client/';
 const index = sourcePathJS + 'index.jsx';
 const sourceSASS = './src/client/sass/**/*.scss';
+const sourceSVG = './src/client/svg/**/*.svg';
 const watchPaths = [sourcePathJS + '**/*.*', './src/common/**/*.*', sourceSASS, './node_modules/tes-sass/**/*'];
 const destination = './public/';
 const destinationJS = destination + 'js/';
@@ -54,7 +57,12 @@ gulp.task('build:sass', () => {
     .pipe(gulp.dest(destinationCSS));
 });
 
-gulp.task('build', ['build:sass', 'build:js']);
+gulp.task('build:svg', () => {
+  gulp.src(sourceSVG)
+    .pipe(gulp.dest(destinationSVG));
+});
+
+gulp.task('build', ['build:sass', 'build:svg', 'build:js']);
 
 gulp.task('watch', ['build'], () => {
   return gulp.watch(watchPaths, ['build'])
