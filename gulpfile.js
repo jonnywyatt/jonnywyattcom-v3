@@ -9,8 +9,8 @@ import Browserify from 'browserify' ;
 import babelify from 'babelify' ;
 import VinylSourceStream from 'vinyl-source-stream';
 import browserSync from 'browser-sync';
-browserSync.create();
 
+browserSync.create();
 const bundle = 'client.js';
 const sourcePathJS = './src/client/';
 const index = sourcePathJS + 'index.jsx';
