@@ -16,12 +16,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var uristring = process.env.MONGODB_URI || 'mongodb://localhost/jonnywyattcom';
 
-_mongoose2.default.connect(uristring, function (err, res) {
+_mongoose2.default.connect(uristring, function (err) {
   if (err) {
     _logger2.default.error('ERROR connecting to: ' + uristring + '. ' + err);
   } else {
     _logger2.default.info('Succeeded connected to: ' + uristring);
-    _logger2.default.info(res);
   }
 });
 
