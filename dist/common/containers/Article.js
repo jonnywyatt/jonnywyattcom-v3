@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _reactRedux = require('react-redux');
 
 var _Article = require('../components/Article/Article');
@@ -13,9 +15,7 @@ var _Article2 = _interopRequireDefault(_Article);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
-  return {
-    article: state.article
-  };
+  return _extends({}, state.article);
 };
 
 /* Create a container component by connecting to the store */

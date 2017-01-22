@@ -22,14 +22,19 @@ var NavBar = function NavBar(props) {
         { className: "row" },
         _react2.default.createElement(
           "div",
-          { className: "col-xs-12" },
+          { className: "col-12-sm" },
           _react2.default.createElement(
             "div",
             { className: "navbar__main" },
             _react2.default.createElement(
               "h1",
               { className: "navbar__title navbar__indent" },
-              "Jonny Wyatt"
+              _react2.default.createElement("img", { className: "navbar__logo", src: "/svg/logo.svg" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "navbar__byline" },
+              "Front end & Node.js developer"
             )
           )
         )
@@ -46,54 +51,67 @@ var NavBar = function NavBar(props) {
           { className: "row" },
           _react2.default.createElement(
             "div",
-            { className: "col-xs-12" },
+            { className: "col-12-sm" },
             _react2.default.createElement(
-              "div",
-              { className: "navbar__links" },
+              "nav",
+              { className: "menu" },
               _react2.default.createElement(
-                "div",
-                { className: "tabs text-sm" },
+                "ul",
+                { className: "menu__list" },
                 _react2.default.createElement(
-                  "div",
-                  { className: "l-inline-container" },
+                  "li",
+                  {
+                    className: "menu__item " + (props.activeRouteName === 'home' ? ' menu__item--current' : '') },
                   _react2.default.createElement(
-                    "div",
-                    { className: "l-vcenter l-vcenter--one-third" },
-                    _react2.default.createElement(
-                      "a",
-                      {
-                        className: "t-nav-jobs tabs__tab navbar__link" + (props.activeRouteName === 'articles' ? ' active' : ''),
-                        href: "/articles",
-                        onClick: props.startRouteChange
-                      },
-                      "Articles"
-                    )
-                  ),
+                    "a",
+                    {
+                      className: 't-nav-jobs menu__link',
+                      href: "/",
+                      onClick: props.startRouteChange
+                    },
+                    "Home"
+                  )
+                ),
+                _react2.default.createElement(
+                  "li",
+                  {
+                    className: "menu__item " + (props.activeRouteName === 'articles' ? ' menu__item--current' : '') },
                   _react2.default.createElement(
-                    "div",
-                    { className: "l-vcenter l-vcenter--one-third" },
-                    _react2.default.createElement(
-                      "a",
-                      {
-                        className: "t-nav-job-stats tabs__tab navbar__link" + (props.activeRouteName === 'contact' ? ' active' : ''),
-                        href: "/contact",
-                        onClick: props.startRouteChange
-                      },
-                      "Contact"
-                    )
-                  ),
+                    "a",
+                    {
+                      className: 't-nav-jobs menu__link',
+                      href: "/articles",
+                      onClick: props.startRouteChange
+                    },
+                    "Articles"
+                  )
+                ),
+                _react2.default.createElement(
+                  "li",
+                  {
+                    className: "menu__item " + (props.activeRouteName === 'contact' ? ' menu__item--current' : '') },
                   _react2.default.createElement(
-                    "div",
-                    { className: "l-vcenter l-vcenter--one-third" },
-                    _react2.default.createElement(
-                      "a",
-                      {
-                        className: "t-nav-jobs tabs__tab navbar__link" + (props.activeRouteName === 'about' ? ' active' : ''),
-                        href: "/about",
-                        onClick: props.startRouteChange
-                      },
-                      "About"
-                    )
+                    "a",
+                    {
+                      className: 't-nav-job-stats menu__link',
+                      href: "/contact",
+                      onClick: props.startRouteChange
+                    },
+                    "Contact"
+                  )
+                ),
+                _react2.default.createElement(
+                  "li",
+                  {
+                    className: "menu__item " + (props.activeRouteName === 'about' ? ' menu__item--current' : '') },
+                  _react2.default.createElement(
+                    "a",
+                    {
+                      className: 't-nav-jobs menu__link',
+                      href: "/about",
+                      onClick: props.startRouteChange
+                    },
+                    "About me"
                   )
                 )
               )

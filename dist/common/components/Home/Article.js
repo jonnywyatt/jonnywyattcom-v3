@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Article = function Article(props) {
   return _react2.default.createElement(
     "div",
-    { className: "view article" },
+    { className: "article" },
     _react2.default.createElement(
       "div",
       { className: "container-fluid-max" },
@@ -22,10 +22,10 @@ var Article = function Article(props) {
         { className: "row" },
         _react2.default.createElement(
           "div",
-          { className: "col-12-sm" },
+          { className: "col-xs-12" },
           _react2.default.createElement(
             "h1",
-            { className: "heading heading--1 margin-bottom-ml" },
+            { className: "heading heading--1" },
             props.title
           ),
           _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: props.contents } })

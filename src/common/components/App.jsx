@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import Home from '../components/Home/Home';
+import About from '../components/About/About';
 import NavBar from '../containers/NavBar';
 import Articles from '../containers/Articles';
-import Article from '../containers/Article';
-import NewArticle from './NewArticle/NewArticle';
+import Contact from '../components/Contact/Contact';
 
 class App extends Component {
   componentDidMount() {
@@ -15,20 +16,13 @@ class App extends Component {
 
   render() {
     return (
-      <div data-view={this.props.routeName}>
+      <div className="container margin-top-ml" data-view={this.props.routeName}>
         <NavBar />
         <main className="views">
-          <div className="view articles">Articles
-            <Articles />
-          </div>
-          <div className="view article">Article
-            <Article />
-          </div>
-          <div className="view about">About</div>
-          <div className="view contact">Contact</div>
-          <div className="view article-new">New article
-            <NewArticle />
-          </div>
+          <Home />
+          <Articles />
+          <Contact />
+          <About />
         </main>
       </div>
     );

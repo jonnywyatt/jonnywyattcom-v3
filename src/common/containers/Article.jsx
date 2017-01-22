@@ -3,7 +3,7 @@ import Article from '../components/Article/Article';
 
 const mapStateToProps = (state) => {
   return {
-    article: state.article
+    ...state.article
   };
 };
 

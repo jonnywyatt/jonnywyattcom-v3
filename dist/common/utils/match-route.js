@@ -16,6 +16,10 @@ exports.default = function (path, cb) {
   };
 
   switch (routeData.path) {
+    case '/':
+      routeData.routeName = 'home';
+      break;
+
     case '/about':
       routeData.routeName = 'about';
       break;

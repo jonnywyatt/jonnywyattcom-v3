@@ -13,7 +13,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Article = function Article() {
   return _react2.default.createElement(
     "div",
-    { className: "" },
+    { className: "article-new" },
+    _react2.default.createElement(
+      "h1",
+      { className: "heading heading--1 margin-bottom-ml" },
+      "New article"
+    ),
     _react2.default.createElement(
       "form",
       { action: "/api/articles", method: "POST" },

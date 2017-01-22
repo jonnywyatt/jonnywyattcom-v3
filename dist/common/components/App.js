@@ -10,6 +10,14 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Home = require('../components/Home/Home');
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _About = require('../components/About/About');
+
+var _About2 = _interopRequireDefault(_About);
+
 var _NavBar = require('../containers/NavBar');
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
@@ -18,13 +26,9 @@ var _Articles = require('../containers/Articles');
 
 var _Articles2 = _interopRequireDefault(_Articles);
 
-var _Article = require('../containers/Article');
+var _Contact = require('../components/Contact/Contact');
 
-var _Article2 = _interopRequireDefault(_Article);
-
-var _NewArticle = require('./NewArticle/NewArticle');
-
-var _NewArticle2 = _interopRequireDefault(_NewArticle);
+var _Contact2 = _interopRequireDefault(_Contact);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57,39 +61,15 @@ var App = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { 'data-view': this.props.routeName },
+        { className: 'container margin-top-ml', 'data-view': this.props.routeName },
         _react2.default.createElement(_NavBar2.default, null),
         _react2.default.createElement(
           'main',
           { className: 'views' },
-          _react2.default.createElement(
-            'div',
-            { className: 'view articles' },
-            'Articles',
-            _react2.default.createElement(_Articles2.default, null)
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'view article' },
-            'Article',
-            _react2.default.createElement(_Article2.default, null)
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'view about' },
-            'About'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'view contact' },
-            'Contact'
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'view article-new' },
-            'New article',
-            _react2.default.createElement(_NewArticle2.default, null)
-          )
+          _react2.default.createElement(_Home2.default, null),
+          _react2.default.createElement(_Articles2.default, null),
+          _react2.default.createElement(_Contact2.default, null),
+          _react2.default.createElement(_About2.default, null)
         )
       );
     }

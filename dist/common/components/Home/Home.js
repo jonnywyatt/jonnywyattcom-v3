@@ -10,10 +10,10 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Article = function Article(props) {
+var Home = function Home() {
   return _react2.default.createElement(
     "div",
-    { className: "view article" },
+    { className: "view home" },
     _react2.default.createElement(
       "div",
       { className: "container-fluid-max" },
@@ -24,21 +24,16 @@ var Article = function Article(props) {
           "div",
           { className: "col-12-sm" },
           _react2.default.createElement(
-            "h1",
-            { className: "heading heading--1 margin-bottom-ml" },
-            props.title
-          ),
-          _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: props.contents } })
+            "div",
+            null,
+            "Home"
+          )
         )
       )
     )
   );
 };
 
-Article.defaultProps = {
-  title: ''
-};
-
-exports.default = Article;
+exports.default = Home;
 module.exports = exports["default"];
-//# sourceMappingURL=Article.js.map
+//# sourceMappingURL=Home.js.map
