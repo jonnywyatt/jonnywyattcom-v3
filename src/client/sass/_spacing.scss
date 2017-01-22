@@ -1,0 +1,36 @@
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-ml: 20px;
+$spacing-xml: 25px;
+$spacing-lg: 30px;
+
+$sizes: xs sm md ml xml lg none;
+$sides: top right bottom left;
+
+$spacing-map: (
+  xs:   $spacing-xs,
+  sm:   $spacing-sm,
+  md:   $spacing-md,
+  ml:   $spacing-ml,
+  xml:  $spacing-xml,
+  lg:   $spacing-lg,
+  none: 0
+);
+
+@each $size in $sizes {
+  .padding-#{$size} {
+    padding: map-get($spacing-map, $size);
+  }
+  .margin-#{$size} {
+    margin: map-get($spacing-map, $size);
+  }
+  @each $side in $sides {
+    .padding-#{$side}-#{$size} {
+      padding-#{$side}: map-get($spacing-map, $size);
+    }
+    .margin-#{$side}-#{$size} {
+      margin-#{$side}: map-get($spacing-map, $size);
+    }
+  }
+}

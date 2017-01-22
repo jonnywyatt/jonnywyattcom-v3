@@ -1,14 +1,38 @@
-@import "typography";
-@import "grid";
-
-.view {
-  display: none;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-$sections: about contact articles article article-new;
+@import "typography";
+@import "grid";
+@import "icons";
+@import "visibility";
+@import "spacing";
+@import "../../common/components/Article/Article";
+@import "../../common/components/NavBar/NavBar";
+
+.container {
+  overflow: hidden;
+}
+
+.views {
+  white-space: nowrap;
+  width: 400%;
+}
+
+.view {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  width: 25%;
+}
+
+$sections: home articles contact about;
 
 @each $section in $sections {
-  [data-view="#{$section}"] .view.#{$section} {
-    display: block;
+  $i: index($sections, $section) - 1;
+  [data-view="#{$section}"] .views {
+    transform: translateX(-$i * 25%);
   }
 }
