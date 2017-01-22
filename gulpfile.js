@@ -43,7 +43,6 @@ gulp.task('build:js', () => {
     .bundle()
     .on('error', (err) => {
       console.error('Error', err.message);
-      this.emit('end');
     })
     .pipe(new VinylSourceStream(bundle))
     .pipe(gulp.dest(destinationJS));
@@ -52,10 +51,14 @@ gulp.task('build:js', () => {
 gulp.task('build:sass', () => {
   gulp.src(sourceSASS)
     .pipe(sass({
-      errLogToConsole: true
+      errLogToConsole: true,
+      sourceMap: true,
+      outFile: destinationCSS,
+      sourceComments: true
     }))
     .pipe(new GulpAutoprefixer())
-    .pipe(gulp.dest(destinationCSS));
+    .pipe(gulp.dest(destinationCSS))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('build:svg', () => {
@@ -65,7 +68,13 @@ gulp.task('build:svg', () => {
 
 gulp.task('build', ['build:sass', 'build:svg', 'build:js']);
 
-gulp.task('watch', ['build'], () => {
+gulp.task('watch', ['build', 'browser-sync'], () => {
   return gulp.watch(watchPaths, ['build'])
     .on('change', (e) => { console.log('\nFile ' + e.path + ' was ' + e.type + ', running js task'); });
+});
+
+gulp.task('browser-sync', () => {
+  browserSync.init({
+    proxy: 'localhost:5000'
+  });
 });
