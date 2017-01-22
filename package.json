@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon -e js,jsx,hbs,json --watch src/ --exec npm run start",
+    "start": "heroku local web",
+    "dev": "nodemon -e js,jsx,hbs,json --watch src/ --exec node server.js",
     "build-app": "babel src -d dist -s",
     "watch-app": "babel src -w -d dist -s",
     "build-assets": "babel-node ./node_modules/gulp/bin/gulp.js build",
