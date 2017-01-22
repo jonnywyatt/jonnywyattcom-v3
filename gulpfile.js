@@ -20,6 +20,7 @@ const watchPaths = [sourcePathJS + '**/*.*', './src/common/**/*.*', sourceSASS, 
 const destination = './public/';
 const destinationJS = destination + 'js/';
 const destinationCSS = destination + 'css/';
+const destinationSVG = destination + 'svg/';
 
 gulp.task('clean', cb => del([destination], cb));
 
