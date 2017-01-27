@@ -14,10 +14,14 @@ class App extends Component {
   }
 
   render() {
+    let viewIndex = 0;
+    if (this.props.routeName === 'articles') viewIndex = 1;
+    else if (this.props.routeName === 'about') viewIndex = 2;
+
     return (
       <div className="container margin-top-ml" data-view={this.props.routeName}>
         <NavBar />
-        <main className="views">
+        <main className="views" style={{ transform: `translateX(-${viewIndex * (100/3)}%)` }}>
           <Home />
           <Articles />
           <About />

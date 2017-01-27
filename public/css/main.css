@@ -594,77 +594,16 @@ body {
 /* line 6, src/client/sass/_views.scss */
 .views {
   white-space: nowrap;
-  width: 400%; }
+  width: 300%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
 
 /* line 11, src/client/sass/_views.scss */
 .view {
   display: inline-block;
   vertical-align: top;
   white-space: normal;
-  width: 25%; }
-
-/* line 22, src/client/sass/_views.scss */
-[data-view="home"] .views {
-  -webkit-animation-name: home;
-          animation-name: home;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards; }
-
-@-webkit-keyframes home {
-  100% {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%); } }
-
-@keyframes home {
-  100% {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%); } }
-
-/* line 22, src/client/sass/_views.scss */
-[data-view="articles"] .views {
-  -webkit-animation-name: articles;
-          animation-name: articles;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards; }
-
-@-webkit-keyframes articles {
-  100% {
-    -webkit-transform: translateX(-25%);
-            transform: translateX(-25%); } }
-
-@keyframes articles {
-  100% {
-    -webkit-transform: translateX(-25%);
-            transform: translateX(-25%); } }
-
-/* line 22, src/client/sass/_views.scss */
-[data-view="about"] .views {
-  -webkit-animation-name: about;
-          animation-name: about;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards; }
-
-@-webkit-keyframes about {
-  100% {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%); } }
-
-@keyframes about {
-  100% {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%); } }
+  width: 100% / 3; }
 
 /* line 1, src/common/components/Article/_Article.scss */
 .article {

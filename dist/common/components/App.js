@@ -55,13 +55,16 @@ var App = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var viewIndex = 0;
+      if (this.props.routeName === 'articles') viewIndex = 1;else if (this.props.routeName === 'about') viewIndex = 2;
+
       return _react2.default.createElement(
         'div',
         { className: 'container margin-top-ml', 'data-view': this.props.routeName },
         _react2.default.createElement(_NavBar2.default, null),
         _react2.default.createElement(
           'main',
-          { className: 'views' },
+          { className: 'views', style: { transform: 'translateX(-' + viewIndex * (100 / 3) + '%)' } },
           _react2.default.createElement(_Home2.default, null),
           _react2.default.createElement(_Articles2.default, null),
           _react2.default.createElement(_About2.default, null)

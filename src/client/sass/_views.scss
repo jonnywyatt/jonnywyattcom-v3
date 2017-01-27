@@ -5,34 +5,12 @@
 
 .views {
   white-space: nowrap;
-  width: 400%;
+  width: 300%;
+  transition: all 0.5s ease-in-out;
 }
-
 .view {
   display: inline-block;
   vertical-align: top;
   white-space: normal;
-  width: 25%;
+  width: 100% / 3;
 }
-
-$sections: home articles about;
-
-@each $section in $sections {
-  $i: index($sections, $section) - 1;
-  [data-view="#{$section}"] .views {
-    animation-name: $section;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes #{$section} {
-    100% {
-      transform: translateX(-$i * 25%);
-    }
-  }
-
-}
-
-
-
