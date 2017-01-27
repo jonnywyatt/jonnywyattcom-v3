@@ -25,7 +25,7 @@ var Article = function Article(props) {
           { className: "col-12-sm" },
           _react2.default.createElement(
             "h1",
-            { className: "heading heading--1 margin-bottom-ml" },
+            { className: "heading heading--2 margin-bottom-ml" },
             props.title
           ),
           _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: props.contents } })

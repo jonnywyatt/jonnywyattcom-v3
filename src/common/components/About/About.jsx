@@ -5,7 +5,7 @@ const About = () => (
     <div className="container-fluid-max">
       <div className="row">
         <div className="col-12-sm">
-          <h1 className="heading heading--1 margin-bottom-ml">About me</h1>
+          <h1 className="heading heading--2 margin-bottom-ml">About me</h1>
           <p><strong>I have a very strong track record of rapidly delivering quality
             software.</strong></p>
           <p>The core of my skillset is front end and I’ve added over 2 years’ solid experience in

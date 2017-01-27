@@ -16,7 +16,7 @@ var Article = function Article() {
     { className: "article-new" },
     _react2.default.createElement(
       "h1",
-      { className: "heading heading--1 margin-bottom-ml" },
+      { className: "heading heading--2 margin-bottom-ml" },
       "New article"
     ),
     _react2.default.createElement(

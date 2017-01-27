@@ -25,7 +25,7 @@ var About = function About() {
           { className: "col-12-sm" },
           _react2.default.createElement(
             "h1",
-            { className: "heading heading--1 margin-bottom-ml" },
+            { className: "heading heading--2 margin-bottom-ml" },
             "About me"
           ),
           _react2.default.createElement(
