@@ -40,15 +40,26 @@
   padding: 0;
   list-style: none;
   justify-content: flex-start;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #cccccc;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+  }
 }
-
 .menu__item {
+  background-color: #ffffff;
   position: relative;
-  margin: 0 10px;
+  margin-right: 10px;
 }
 
 .menu__item-last {
   margin-left: auto;
+  margin-right: 0;
+  padding-left: 10px;
 }
 
 .menu__link {

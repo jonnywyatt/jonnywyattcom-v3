@@ -595,15 +595,15 @@ body {
 .views {
   white-space: nowrap;
   width: 300%;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out; }
 
 /* line 11, src/client/sass/_views.scss */
 .view {
   display: inline-block;
   vertical-align: top;
   white-space: normal;
-  width: 100% / 3; }
+  width: 33.33333%; }
 
 /* line 1, src/common/components/Article/_Article.scss */
 .article {
@@ -674,17 +674,29 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start; }
+  /* line 43, src/common/components/NavBar/_NavBar.scss */
+  .menu__list:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #cccccc;
+    height: 1px;
+    width: 100%;
+    top: 50%; }
 
-/* line 45, src/common/components/NavBar/_NavBar.scss */
+/* line 53, src/common/components/NavBar/_NavBar.scss */
 .menu__item {
+  background-color: #ffffff;
   position: relative;
-  margin: 0 10px; }
+  margin-right: 10px; }
 
-/* line 50, src/common/components/NavBar/_NavBar.scss */
+/* line 59, src/common/components/NavBar/_NavBar.scss */
 .menu__item-last {
-  margin-left: auto; }
+  margin-left: auto;
+  margin-right: 0;
+  padding-left: 10px; }
 
-/* line 54, src/common/components/NavBar/_NavBar.scss */
+/* line 65, src/common/components/NavBar/_NavBar.scss */
 .menu__link {
   position: relative;
   display: block;
@@ -704,21 +716,21 @@ body {
   -khtml-user-select: none;
   -webkit-tap-highlight-color: transparent; }
 
-/* line 70, src/common/components/NavBar/_NavBar.scss */
+/* line 81, src/common/components/NavBar/_NavBar.scss */
 .menu__link:hover,
 .menu__link:focus {
   outline: none; }
 
-/* line 75, src/common/components/NavBar/_NavBar.scss */
+/* line 86, src/common/components/NavBar/_NavBar.scss */
 .menu__link:hover,
 .menu__link:focus {
   color: #929292; }
 
-/* line 80, src/common/components/NavBar/_NavBar.scss */
+/* line 91, src/common/components/NavBar/_NavBar.scss */
 .menu__item--current .menu__link {
   color: #d94f5c; }
 
-/* line 84, src/common/components/NavBar/_NavBar.scss */
+/* line 95, src/common/components/NavBar/_NavBar.scss */
 .menu__item::before,
 .menu__item::after,
 .menu__link::before,
@@ -735,7 +747,7 @@ body {
   -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }
 
-/* line 96, src/common/components/NavBar/_NavBar.scss */
+/* line 107, src/common/components/NavBar/_NavBar.scss */
 .menu__item::before,
 .menu__item::after {
   top: 0;
@@ -745,20 +757,20 @@ body {
           transform: scale3d(1, 0, 1); }
 
 /* left line */
-/* line 105, src/common/components/NavBar/_NavBar.scss */
+/* line 116, src/common/components/NavBar/_NavBar.scss */
 .menu__item::before {
   left: 0;
   -webkit-transition-delay: 0.05s;
           transition-delay: 0.05s; }
 
 /* right line */
-/* line 111, src/common/components/NavBar/_NavBar.scss */
+/* line 122, src/common/components/NavBar/_NavBar.scss */
 .menu__item::after {
   right: 0;
   -webkit-transition-delay: 0.15s;
           transition-delay: 0.15s; }
 
-/* line 116, src/common/components/NavBar/_NavBar.scss */
+/* line 127, src/common/components/NavBar/_NavBar.scss */
 .menu__link::before,
 .menu__link::after {
   left: 0;
@@ -768,18 +780,18 @@ body {
           transform: scale3d(0, 1, 1); }
 
 /* top line */
-/* line 125, src/common/components/NavBar/_NavBar.scss */
+/* line 136, src/common/components/NavBar/_NavBar.scss */
 .menu__link::before {
   top: 0;
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s; }
 
 /* bottom line */
-/* line 131, src/common/components/NavBar/_NavBar.scss */
+/* line 142, src/common/components/NavBar/_NavBar.scss */
 .menu__link::after {
   bottom: 0; }
 
-/* line 135, src/common/components/NavBar/_NavBar.scss */
+/* line 146, src/common/components/NavBar/_NavBar.scss */
 .menu__item--current::before,
 .menu__item--current::after,
 .menu__item--current .menu__link::before,

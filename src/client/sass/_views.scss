@@ -6,11 +6,11 @@
 .views {
   white-space: nowrap;
   width: 300%;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .view {
   display: inline-block;
   vertical-align: top;
   white-space: normal;
-  width: 100% / 3;
+  width: (100% / 3);
 }
