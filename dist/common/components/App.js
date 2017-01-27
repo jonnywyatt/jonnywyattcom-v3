@@ -26,10 +26,6 @@ var _Articles = require('../containers/Articles');
 
 var _Articles2 = _interopRequireDefault(_Articles);
 
-var _Contact = require('../components/Contact/Contact');
-
-var _Contact2 = _interopRequireDefault(_Contact);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -68,7 +64,6 @@ var App = function (_Component) {
           { className: 'views' },
           _react2.default.createElement(_Home2.default, null),
           _react2.default.createElement(_Articles2.default, null),
-          _react2.default.createElement(_Contact2.default, null),
           _react2.default.createElement(_About2.default, null)
         )
       );

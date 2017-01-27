@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: baseline;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 25px;
   @media only screen and (min-width: $breakpoint-md) {
     flex-wrap: nowrap;
@@ -11,7 +11,7 @@
 }
 
 .navbar__title {
-  margin: 0;
+  margin: 0 50px 0 0;
 }
 
 .navbar__logo {
@@ -21,6 +21,7 @@
 }
 
 .navbar__byline {
+  color: #999999;
   font-weight: bold;
   margin-top: 20px;
 }
@@ -38,22 +39,26 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .menu__item {
   position: relative;
+  margin: 0 10px;
+}
+
+.menu__item-last {
+  margin-left: auto;
 }
 
 .menu__link {
   position: relative;
   display: block;
   text-align: center;
-  color: #b5b5b5;
+  color: #222222;
   transition: color 0.3s;
   text-decoration: none;
   font-size: 1.05em;
-  font-weight: bold;
   padding: 1em;
   cursor: pointer;
   user-select: none;

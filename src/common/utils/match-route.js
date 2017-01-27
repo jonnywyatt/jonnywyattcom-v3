@@ -14,10 +14,6 @@ export default (path, cb) => {
       routeData.routeName = 'about';
       break;
 
-    case '/contact':
-      routeData.routeName = 'contact';
-      break;
-
     case '/articles/new':
       routeData.routeName = 'article-new';
       break;

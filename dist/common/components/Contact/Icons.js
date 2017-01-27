@@ -33,4 +33,4 @@ exports.default = function () {
 };
 
 module.exports = exports["default"];
-//# sourceMappingURL=Contact.js.map
+//# sourceMappingURL=Icons.js.map

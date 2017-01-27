@@ -3,7 +3,6 @@ import Home from '../components/Home/Home';
 import About from '../components/About/About';
 import NavBar from '../containers/NavBar';
 import Articles from '../containers/Articles';
-import Contact from '../components/Contact/Contact';
 
 class App extends Component {
   componentDidMount() {
@@ -21,7 +20,6 @@ class App extends Component {
         <main className="views">
           <Home />
           <Articles />
-          <Contact />
           <About />
         </main>
       </div>
