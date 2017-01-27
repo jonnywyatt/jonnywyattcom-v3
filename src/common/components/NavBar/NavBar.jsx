@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 import Icons from '../Icons/Icons';
 
 const NavBar = props => (
@@ -8,7 +8,7 @@ const NavBar = props => (
         <div className="col-12-sm">
           <div className="navbar__main">
             <h1 className="navbar__title navbar__indent">
-              <img className="navbar__logo" src="/svg/logo.svg"/>
+              <img className="navbar__logo" src="/svg/logo.svg" />
             </h1>
             <div className="navbar__byline">
               Front end & Node.js developer

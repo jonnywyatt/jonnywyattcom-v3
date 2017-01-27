@@ -21,7 +21,7 @@ exports.default = function () {
     ),
     _react2.default.createElement(
       "a",
-      { className: "icon", href: "#" },
+      { className: "icon", href: "http://TBC" },
       _react2.default.createElement("i", { className: "icon-cv" })
     ),
     _react2.default.createElement(
