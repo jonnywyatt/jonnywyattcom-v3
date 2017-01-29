@@ -6,13 +6,14 @@
     "start": "heroku local web",
     "mongo-local": "mongod --dbpath=./data",
     "dev": "nodemon -e js,jsx,hbs,json --watch src/ --exec node server.js",
+    "build": "npm run build-app && npm run build-assets",
     "build-app": "babel src -d dist -s",
     "watch-app": "babel src -w -d dist -s",
     "build-assets": "babel-node ./node_modules/gulp/bin/gulp.js build",
     "watch-assets": "babel-node ./node_modules/gulp/bin/gulp.js watch",
     "lint": "eslint --ext .js,.jsx .",
     "lint:fix": "eslint . --fix",
-    "test": "npm run lint",
+    "test": "npm run build && npm run lint",
     "heroku-postbuild": "npm run build-app && npm run build-assets"
   },
   "dependencies": {

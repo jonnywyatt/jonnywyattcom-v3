@@ -1,2 +1,2 @@
 language: node_js
-"heroku-postbuild": npm run build-app && npm run build-assets
+"heroku-postbuild": npm run build
