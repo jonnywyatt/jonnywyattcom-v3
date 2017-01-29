@@ -31,3 +31,6 @@ npm-debug.log
 
 data
 _SOURCE-FILES
+
+dist
+public

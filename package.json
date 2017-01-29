@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "heroku local web",
+    "mongo-local": "mongod --dbpath=./data",
     "dev": "nodemon -e js,jsx,hbs,json --watch src/ --exec node server.js",
     "build-app": "babel src -d dist -s",
     "watch-app": "babel src -w -d dist -s",
