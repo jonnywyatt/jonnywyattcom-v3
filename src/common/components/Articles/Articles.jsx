@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Article from '../../containers/Article';
 
 const Articles = props => (
   <div className="view articles">
@@ -6,7 +7,22 @@ const Articles = props => (
       <div className="row">
         <div className="col-12-sm">
           {
-            props.articles && props.articles.map((article, idx) => (<div key={idx}><a href={`/articles/${article.slug}`} onClick={props.startRouteChange}>{article.title}</a></div>))
+            (
+              props.activeRouteName === 'articles'
+              && props.articles
+              && props.articles.map((article, idx) => (
+                <div key={idx}>
+                  <a
+                    href={`/articles/${article.slug}`}
+                    onClick={props.startRouteChange}>{article.title}</a>
+                </div>
+              ))
+            )
+          }
+          {
+            (
+              props.activeRouteName === 'article' && <Article />
+            )
           }
         </div>
       </div>
