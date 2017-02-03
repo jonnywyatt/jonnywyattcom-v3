@@ -27,7 +27,7 @@ class Header extends Component {
             <div className="col-12-sm">
               <div className="header__main">
                 <h1 className="header__title header__indent">
-                  <img className="header__logo" src="/svg/logo.svg"/>
+                  <img className="header__logo" src="/svg/logo.svg" />
                 </h1>
                 <div className="header__byline">
                   Front end & Node.js developer

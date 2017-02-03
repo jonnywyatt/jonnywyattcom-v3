@@ -10,7 +10,7 @@ const Article = props => (
         to list</a>
     </div>
     <h1 className="heading heading--2 margin-bottom-ml">{ props.title }</h1>
-    <div dangerouslySetInnerHTML={{__html: props.contents}}/>
+    <div dangerouslySetInnerHTML={{ __html: props.contents }} />
   </div>);
 
 Article.defaultProps = {
