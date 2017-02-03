@@ -2,21 +2,7 @@ import React, { PropTypes } from 'react';
 import Icons from '../Icons/Icons';
 
 const NavBar = props => (
-  <div className="t-navbar navbar">
-    <div className="container-fluid-max">
-      <div className="row">
-        <div className="col-12-sm">
-          <div className="navbar__main">
-            <h1 className="navbar__title navbar__indent">
-              <img className="navbar__logo" src="/svg/logo.svg" />
-            </h1>
-            <div className="navbar__byline">
-              Front end & Node.js developer
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div className="t-navbar navbar container-fluid-max">
     <div className="container-fluid-max">
       <div className="row">
         <div className="col-12-sm">
@@ -33,7 +19,7 @@ const NavBar = props => (
                 </a>
               </li>
               <li
-                className={`menu__item ${props.activeRouteName === 'articles' ? ' menu__item--current' : ''}`}>
+                className={`menu__item ${['articles', 'article'].indexOf(props.activeRouteName) > -1 ? ' menu__item--current' : ''}`}>
                 <a
                   className={'t-nav-jobs menu__link'}
                   href="/articles"

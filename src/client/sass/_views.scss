@@ -1,13 +1,14 @@
 
-.container {
+.views {
   overflow: hidden;
 }
 
-.views {
+.views__inner {
   white-space: nowrap;
   width: 300%;
   transition: all 0.25s ease-in-out;
 }
+
 .view {
   display: inline-block;
   vertical-align: top;

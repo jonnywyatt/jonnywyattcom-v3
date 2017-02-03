@@ -1,3 +1,8 @@
+.navbar {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
 .navbar__main {
   display: flex;
   flex-direction: row;
@@ -29,7 +34,6 @@
 
 .menu {
   line-height: 1;
-  margin: 0 auto 1em;
 }
 
 .menu__list {
