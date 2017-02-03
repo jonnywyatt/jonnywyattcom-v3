@@ -19,7 +19,7 @@ $font-weight-regular: 400;
 $font-weight-heavy: 700;
 
 // colors
-$dark-gray: #333447;
+$dark-gray: #414141;
 
 // universal
 
@@ -98,7 +98,16 @@ body {
   text-align: justify;
 }
 
-.link {
+.link,
+.views a {
   text-decoration: none;
   color: #3a768f;
+}
+
+.text-sm {
+  font-size: 0.9rem;
+}
+
+.text-xs {
+  font-size: 0.9rem;
 }

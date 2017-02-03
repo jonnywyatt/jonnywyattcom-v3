@@ -19,11 +19,13 @@ $breakpoint-lg: 60em; // 960px
   @media only screen and (min-width: $breakpoint-sm) {
     width: 80%;
   }
+}
 
-  @media only screen and (min-width: $breakpoint-lg) {
-    width: 75%;
-    max-width: 60rem;
-  }
+.container-fluid-max {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1024px;
 }
 
 .row {
