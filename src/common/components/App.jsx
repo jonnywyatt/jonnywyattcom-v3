@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Home from '../components/Home/Home';
 import About from '../components/About/About';
 import Header from '../components/Header/Header';
-import NavBar from '../containers/NavBar';
+import NavBar from '../components/NavBar/NavBar';
 import Articles from '../containers/Articles';
 
 class App extends Component {

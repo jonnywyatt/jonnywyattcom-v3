@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import NavBar from '../components/NavBar/NavBar';
+import Menu from '../components/Menu/Menu';
 import history from '../actions/history';
 
 const mapStateToProps = (state) => {
@@ -13,9 +13,9 @@ const mapDispatchToProps = {
 };
 
 /* Create a container component by connecting to the store */
-const NavBarContainer = connect(
+const MenuContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(NavBar);
+)(Menu);
 
-export default NavBarContainer;
+export default MenuContainer;

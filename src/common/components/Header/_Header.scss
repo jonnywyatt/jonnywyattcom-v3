@@ -1,9 +1,24 @@
 .header {
   background-color: #ffffff;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.header__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: background-color 0.1s linear;
+  .header--inverted & {
+    background-color: $color-dark-gray;
+  }
 }
 
 .header__main {
@@ -27,9 +42,19 @@
   position: relative;
   bottom: -11px;
 }
+.header__logo-path {
+  fill: $color-dark-gray;
+  transition: fill 0.5s linear;
+  .header--inverted & {
+    fill: $color-aqua;
+  }
+}
 
 .header__byline {
-  color: #999999;
+  color: $color-cherry;
   font-weight: bold;
   margin-top: 20px;
+  .header--inverted & {
+    font-weight: normal;
+  }
 }
