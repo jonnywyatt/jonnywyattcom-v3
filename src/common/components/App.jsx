@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import Home from '../components/Home/Home';
 import About from '../components/About/About';
 import Header from '../components/Header/Header';
@@ -26,11 +26,11 @@ class App extends Component {
         <main className="views container-fluid-max">
           {
             this.props.routeName === 'article-new' ?
-              <NewArticle/>
+              <NewArticle />
               :
               <div
                 className="views__inner"
-                style={{transform: `translateX(-${viewIndex * (100 / 3)}%)`}}>
+                style={{ transform: `translateX(-${viewIndex * (100 / 3)}%)` }}>
                 <Home />
                 <Articles />
                 <About />
