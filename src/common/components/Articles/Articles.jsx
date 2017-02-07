@@ -11,10 +11,11 @@ const Articles = props => (
               props.activeRouteName === 'articles'
               && props.articles
               && props.articles.map((article, idx) => (
-                <div key={idx}>
-                  <a
+                <div className="margin-bottom-sm" key={idx}>
+                  <h2 className="heading heading--3 heading--inline margin-right-md"><a
                     href={`/articles/${article.slug}`}
-                    onClick={props.startRouteChange}>{article.title}</a>
+                    onClick={props.startRouteChange}>{article.title}</a></h2>
+                  <span className="text-sm text-discreet text-light ">{article.createdDateDisplay}</span>
                 </div>
               ))
             )

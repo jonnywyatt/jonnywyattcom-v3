@@ -38,6 +38,7 @@ body {
 
 // typography
 .heading {
+  font-weight: normal;
   margin: 0;
 }
 
@@ -65,16 +66,8 @@ body {
   font-size: 0.875rem;
 }
 
-.font-light {
-  font-weight: $font-weight-light;
-}
-
-.font-regular {
-  font-weight: $font-weight-regular;
-}
-
-.font-heavy {
-  font-weight: $font-weight-heavy;
+.heading--inline {
+  display: inline-block;
 }
 
 // utility
@@ -109,4 +102,20 @@ body {
 
 .text-xs {
   font-size: 0.9rem;
+}
+
+.text-light {
+  font-weight: $font-weight-light;
+}
+
+.text-regular {
+  font-weight: $font-weight-regular;
+}
+
+.text-heavy {
+  font-weight: $font-weight-heavy;
+}
+
+.text-discreet {
+  color: $color-light-gray;
 }
