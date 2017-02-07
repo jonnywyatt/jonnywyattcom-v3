@@ -37,6 +37,7 @@ const historyActions = {
           return;
         }
         target.preventDefault();
+        window.scrollTo(0, 0);
         history.pushState(matchedRoute, null, url);
       });
     };
