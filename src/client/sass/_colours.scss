@@ -1,6 +1,7 @@
-$color-light-gray: #dddddd;
+$color-mid-gray: #999999;
 $color-dark-gray: #414141;
 $color-aqua: #12DAFF;
 $color-cherry: #BE2065;
+$color-cherry-light: lighten($color-cherry, 10%);
 $color-cherry-dark: #B10C54;
 $color-white: #FFFFFF;
