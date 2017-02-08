@@ -61,12 +61,16 @@ gulp.task('build:sass', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('build:svg', () => {
+gulp.task('copy', () => {
   gulp.src(sourceSVG)
     .pipe(gulp.dest(destinationSVG));
+  gulp.src('./src/client/pdf/**/*.pdf')
+    .pipe(gulp.dest(destination + 'pdf/'));
+  gulp.src('./src/client/images/**/*.*')
+    .pipe(gulp.dest(destination + 'img/'));
 });
 
-gulp.task('build', ['build:sass', 'build:svg', 'build:js']);
+gulp.task('build', ['build:sass', 'copy', 'build:js']);
 
 gulp.task('watch', ['build', 'browser-sync'], () => {
   return gulp.watch(watchPaths, ['build'])
