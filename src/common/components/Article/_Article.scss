@@ -5,5 +5,19 @@
 }
 
 .article__image {
-  float: right;
+  @media only screen and (min-width: $breakpoint-md) {
+    float: right;
+    margin-left: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+.article__image--small {
+  width: 50%;
+}
+
+.article img {
+  @media only screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
