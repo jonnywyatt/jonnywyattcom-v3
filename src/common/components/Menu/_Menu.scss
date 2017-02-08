@@ -29,7 +29,7 @@
   position: relative;
   margin-right: 10px;
   .menu--full & {
-    background-color: #ffffff;
+    background-color: $color-white;
   }
 }
 
@@ -40,7 +40,6 @@
 }
 
 .menu__link {
-  color: $color-white;
   position: relative;
   display: block;
   text-align: center;
@@ -52,6 +51,9 @@
   -webkit-touch-callout: none;
   -khtml-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  .header--inverted & {
+    color: $color-white;
+  }
   .menu--full & {
     padding: 1em;
     color: #222222;
@@ -69,7 +71,10 @@
 }
 
 .menu__item--current .menu__link {
-  color: $color-cherry;
+  color: $color-cherry-light;
+  .menu--full & {
+    color: $color-cherry;
+  }
 }
 
 .menu--full {

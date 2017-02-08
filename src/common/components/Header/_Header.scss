@@ -38,10 +38,18 @@
 }
 
 .header__logo {
-  display: block;
-  position: relative;
-  bottom: -11px;
+  display: inline-block;
+  width: 138px;
+  height: 25px;
+  @media only screen and (min-width: $breakpoint-md) {
+    display: block;
+    position: relative;
+    bottom: -11px;
+    width: 276px;
+    height: 51px;
+  }
 }
+
 .header__logo-path {
   fill: $color-dark-gray;
   transition: fill 0.5s linear;
@@ -52,9 +60,30 @@
 
 .header__byline {
   color: $color-cherry;
-  font-weight: bold;
   margin-top: 20px;
+  @media only screen and (min-width: $breakpoint-md) {
+    font-weight: bold;
+  }
   .header--inverted & {
     font-weight: normal;
+  }
+}
+
+.header__byline-menu {
+  @media only screen and (min-width: $breakpoint-md) {
+    display: none;
+    .header--inverted & {
+      display: block;
+    }
+  }
+}
+
+.header__byline-label {
+  display: none;
+  @media only screen and (min-width: $breakpoint-md) {
+    display: block;
+    .header--inverted & {
+      display: none;
+    }
   }
 }

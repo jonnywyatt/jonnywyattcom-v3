@@ -20,7 +20,7 @@ class App extends Component {
     else if (this.props.routeName === 'about') viewIndex = 2;
 
     return (
-      <div data-view={this.props.routeName}>
+      <div className="app" data-view={this.props.routeName}>
         <Header />
         <NavBar />
         <main className="views container-fluid-max">

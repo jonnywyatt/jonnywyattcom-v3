@@ -1,6 +1,9 @@
 .navbar {
-  margin-top: 120px;
-  margin-bottom: 25px;
+  display: none;
+  @media only screen and (min-width: $breakpoint-md) {
+    display: block;
+    margin-bottom: 25px;
+  }
 }
 
 .navbar__main {
