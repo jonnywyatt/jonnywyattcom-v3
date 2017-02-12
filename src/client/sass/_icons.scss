@@ -6,9 +6,8 @@
   background-position: 50% 50%;
   text-indent: -10rem;
   overflow: hidden;
-  // use rem instead of em as font size might be set to zero to hide text
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 28px;
+  height: 28px;
   vertical-align: middle;
 }
 
@@ -25,23 +24,19 @@ $icons: cv envelope github globe linkedin phone pin;
   }
 }
 
-.icon-text-container {
+.icon-text {
   display: inline-block;
   position: relative;
-  padding-left: 1.8em;
+  padding-left: 60px;
   > i {
     position: absolute;
     padding: 0;
     border: 0;
     left: 0;
     top: 50%;
+    width: 40px;
+    height: 40px;
     transform: translateY(-50%);
     -ms-transform: translateY(-50%);
-    &.icon-first-line {
-      top: 0.7em;
-    }
-  }
-  .icon-text-container__text-block {
-    display: block;
   }
 }
