@@ -24,7 +24,7 @@ class Header extends Component {
   }
 
   scrollHandler() {
-    this.setState({ invertHeader: window.scrollY > 110 });
+    this.setState({ invertHeader: window.scrollY > 68 });
   }
 
   render() {
