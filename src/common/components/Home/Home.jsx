@@ -34,7 +34,7 @@ const Home = () => (
               <p className="heading heading--4">CI / CD</p>
               <p className="heading heading--4">agile</p>
               <p className="heading heading--4">mobile</p>
-              <p className="heading heading--4">SVG</p>
+              <p className="heading heading--4">rapid prototyping</p>
             </div>
           </div>
         </div>
