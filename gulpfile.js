@@ -7,8 +7,11 @@ import sass from 'gulp-sass';
 import del from 'del' ;
 import Browserify from 'browserify' ;
 import babelify from 'babelify' ;
-import VinylSourceStream from 'vinyl-source-stream';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 import browserSync from 'browser-sync';
+import uglify from 'gulp-uglify';
+import sourcemaps from 'gulp-sourcemaps';
 
 browserSync.create();
 const bundle = 'client.js';
@@ -29,7 +32,6 @@ gulp.task('build:js', () => {
     cache: {},
     debug: true,
     packageCache: {},
-    fullPaths: true,
     extensions: ['.jsx', '.js']
   };
   new Browserify(index, browserifyOpts)
@@ -44,7 +46,11 @@ gulp.task('build:js', () => {
     .on('error', (err) => {
       console.error('Error', err.message);
     })
-    .pipe(new VinylSourceStream(bundle))
+    .pipe(source(bundle))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(destinationJS));
 });
 
@@ -66,7 +72,7 @@ gulp.task('copy', () => {
     .pipe(gulp.dest(destinationSVG));
   gulp.src('./src/client/pdf/**/*.pdf')
     .pipe(gulp.dest(destination + 'pdf/'));
-  gulp.src('./src/client/images/**/*.*')
+  gulp.src('./src/client/img/**/*.*')
     .pipe(gulp.dest(destination + 'img/'));
 });
 

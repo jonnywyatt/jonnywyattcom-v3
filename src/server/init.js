@@ -3,6 +3,7 @@ import exphbs from 'express-handlebars';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import compression from 'compression';
 import logger from '../common/utils/logger';
 import reactInit from './middleware/react-init';
 import apiArticleFactory from './middleware/api-article';
@@ -20,6 +21,8 @@ app.set('views', path.join(__dirname, '../../src/server/views'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(compression());
 app.use(express.static(path.join(__dirname, '../../public')));
 
 const env = app.get('env');
