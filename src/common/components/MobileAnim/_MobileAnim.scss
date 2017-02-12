@@ -1,0 +1,30 @@
+.mobile-anim {
+  width: 350px;
+  height: 553px;
+  position: relative;
+  opacity: 0;
+}
+
+.mobile-anim--loading {
+  opacity: 1;
+}
+
+.mobile-anim__bitmap {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.mobile-anim__svg {
+  position: absolute;
+  z-index: 1;
+  transition: opacity 0.5s linear;
+}
+
+.mobile-anim--loaded .mobile-anim__svg {
+  opacity: 0;
+}
+
+.mobile-anim--loaded .mobile-anim__bitmap {
+  opacity: 1;
+}
