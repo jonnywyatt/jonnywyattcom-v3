@@ -10,8 +10,8 @@ export default (path, cb) => {
       routeData.routeName = 'home';
       break;
 
-    case '/about':
-      routeData.routeName = 'about';
+    case '/contact':
+      routeData.routeName = 'contact';
       break;
 
     case '/articles/new':

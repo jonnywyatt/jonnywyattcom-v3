@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Home from '../components/Home/Home';
-import About from '../components/About/About';
+import Contact from './Contact/Contact';
 import Header from '../components/Header/Header';
 import NavBar from '../components/NavBar/NavBar';
 import Articles from '../containers/Articles';
@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     let viewIndex = 0;
     if (['articles', 'article'].indexOf(this.props.routeName) > -1) viewIndex = 1;
-    else if (this.props.routeName === 'about') viewIndex = 2;
+    else if (this.props.routeName === 'contact') viewIndex = 2;
 
     return (
       <div className="app" data-view={this.props.routeName}>
@@ -33,7 +33,7 @@ class App extends Component {
                 style={{ transform: `translateX(-${viewIndex * (100 / 3)}%)` }}>
                 <Home />
                 <Articles />
-                <About />
+                <Contact />
               </div>
           }
         </main>

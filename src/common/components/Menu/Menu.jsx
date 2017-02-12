@@ -11,7 +11,7 @@ const Menu = props => (
           href="/"
           onClick={props.startRouteChange}
         >
-          Home
+          About me
         </a>
       </li>
       <li
@@ -25,13 +25,13 @@ const Menu = props => (
         </a>
       </li>
       <li
-        className={`menu__item ${props.activeRouteName === 'about' ? ' menu__item--current' : ''}`}>
+        className={`menu__item ${props.activeRouteName === 'contact' ? ' menu__item--current' : ''}`}>
         <a
           className="menu__link"
-          href="/about"
+          href="/contact"
           onClick={props.startRouteChange}
         >
-          About me
+          Contact
         </a>
       </li>
       {
