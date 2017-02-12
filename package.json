@@ -65,7 +65,8 @@
     "serve-favicon": "~2.3.0",
     "source-map-support": "^0.4.8",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "yarn": "^0.19.1"
   },
   "description": "Source for jonnywyatt.com",
   "main": "./src/server/app.js",
