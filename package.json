@@ -14,7 +14,7 @@
     "lint": "eslint --ext .js,.jsx .",
     "lint:fix": "eslint . --fix",
     "test": "npm run build && npm run lint",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm rebuild node-sass && npm run build"
   },
   "dependencies": {
     "axios": "^0.15.3",
