@@ -19,7 +19,7 @@ export default () => {
       });
     },
     getAll: (req, res) => {
-      ModelArticle.find().lean().exec((err, articles) => {
+      ModelArticle.find().sort({ createdDate: 'desc' }).lean().exec((err, articles) => {
         if (err) {
           logger.error(err);
           return res.status(500);
