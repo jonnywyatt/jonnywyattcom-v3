@@ -14,6 +14,9 @@ export default appConfig => ({
       if (error) {
         return res.status(error.httpCode).send();
       }
+      if (matchedRoute.redirectUrl) {
+        return res.redirect(301, `/articles/${matchedRoute.redirectUrl}`);
+      }
       const store = seedStore(
         appConfig,
         matchedRoute,

@@ -1,4 +1,5 @@
 import pathToRegexp from 'path-to-regexp';
+import redirectUrls from './redirectUrls';
 
 export default (path, cb) => {
   const routeData = {
@@ -31,6 +32,7 @@ export default (path, cb) => {
         routeData.dataNeed = 'article';
         routeData.stateKeyToCompare = 'articleId';
         routeData.dataNeedParam = matched[1];
+        routeData.redirectUrl = redirectUrls(matched[1]);
         break;
       }
       return cb({
