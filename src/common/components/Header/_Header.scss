@@ -12,14 +12,18 @@
 }
 
 .header__bg {
+  background-color: $color-dark-gray;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   transition: background-color 0.1s linear;
-  .header--inverted & {
-    background-color: $color-dark-gray;
+  @media only screen and (min-width: $breakpoint-md) {
+    background-color: $color-white;
+    .header--inverted & {
+      background-color: $color-dark-gray;
+    }
   }
 }
 
@@ -57,10 +61,13 @@
 }
 
 .header__logo-path {
-  fill: $color-dark-gray;
+  fill: $color-aqua;
   transition: fill 0.5s linear;
-  .header--inverted & {
-    fill: $color-aqua;
+  @media only screen and (min-width: $breakpoint-md) {
+    fill: $color-dark-gray;
+    .header--inverted & {
+      fill: $color-aqua;
+    }
   }
 }
 

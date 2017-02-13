@@ -29,6 +29,9 @@
 .menu__item {
   position: relative;
   margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
   .menu--full & {
     background-color: $color-white;
   }
@@ -41,6 +44,7 @@
 }
 
 .menu__link {
+  color: $color-white;
   position: relative;
   display: block;
   text-align: center;
@@ -52,8 +56,11 @@
   -webkit-touch-callout: none;
   -khtml-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  .header--inverted & {
-    color: $color-white;
+  @media only screen and (min-width: $breakpoint-md) {
+    color: $color-dark-gray;
+    .header--inverted & {
+      color: $color-white;
+    }
   }
   .menu--full & {
     padding: 1em;
@@ -73,7 +80,9 @@
 
 .menu__item--current .menu__link {
   color: $color-cherry-light;
+  font-weight: bold;
   .menu--full & {
+    font-weight: normal;
     color: $color-cherry;
   }
 }
