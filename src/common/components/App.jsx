@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import Home from '../components/Home/Home';
 import Contact from './Contact/Contact';
 import Header from '../components/Header/Header';
@@ -32,7 +32,7 @@ class App extends Component {
                   :
                   <div
                     className="views__inner"
-                    style={{transform: `translateX(-${viewIndex * (100 / 3)}%)`}}>
+                    style={{ transform: `translateX(-${viewIndex * (100 / 3)}%)` }}>
                     <Home />
                     <Articles />
                     <Contact />
