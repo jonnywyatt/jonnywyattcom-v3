@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import Home from '../components/Home/Home';
 import Contact from './Contact/Contact';
 import Header from '../components/Header/Header';
@@ -23,19 +23,23 @@ class App extends Component {
       <div className="app" data-view={this.props.routeName}>
         <Header />
         <NavBar />
-        <main className="views container-fluid-max">
-          {
-            this.props.routeName === 'article-new' ?
-              <NewArticle />
-              :
-              <div
-                className="views__inner"
-                style={{ transform: `translateX(-${viewIndex * (100 / 3)}%)` }}>
-                <Home />
-                <Articles />
-                <Contact />
-              </div>
-          }
+        <main className="container-fluid-max">
+          <div className="row">
+            <div className="col-12 views">
+              {
+                this.props.routeName === 'article-new' ?
+                  <NewArticle />
+                  :
+                  <div
+                    className="views__inner"
+                    style={{transform: `translateX(-${viewIndex * (100 / 3)}%)`}}>
+                    <Home />
+                    <Articles />
+                    <Contact />
+                  </div>
+              }
+            </div>
+          </div>
         </main>
       </div>
     );

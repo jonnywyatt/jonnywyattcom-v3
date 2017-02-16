@@ -37,9 +37,9 @@ class MobileAnim extends Component {
         ref={(el) => {
           this.svg = el;
         }}
-        width="350px" height="553px" viewBox="0 0 350 553" version="1.1">
+        width="100%" height="100%" viewBox="0 0 300 510" preserveAspectRatio="xMidYMid meet" version="1.1">
         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g id="Group-2" transform="translate(51.000000, 6.000000)">
+          <g id="Group-2" transform="translate(26.000000, 6.000000)">
             <path d="M0,29.9996385 C0,13.4312957 13.433624,0 29.9958231,0 L215.004177,0 C231.570413,0 245,13.4323806 245,29.9996385 L245,465.000361 C245,481.568704 231.566376,495 215.004177,495 L29.9958231,495 C13.4295874,495 0,481.567619 0,465.000361 L0,29.9996385 Z" id="Path" stroke="#414141" />
             <path d="M78,20 C78,17.790861 79.7979208,16 81.9970451,16 L163.002955,16 C165.210462,16 167,17.7953562 167,20 C167,22.209139 165.202079,24 163.002955,24 L81.9970451,24 C79.789538,24 78,22.2046438 78,20 Z" id="Path" stroke="#414141" />
             <path d="M78,475 C78,472.790861 79.7979208,471 81.9970451,471 L163.002955,471 C165.210462,471 167,472.795356 167,475 C167,477.209139 165.202079,479 163.002955,479 L81.9970451,479 C79.789538,479 78,477.204644 78,475 Z" id="Path" stroke="#414141" />
@@ -63,7 +63,7 @@ class MobileAnim extends Component {
         </g>
       </svg>
       <div className="mobile-anim__bitmap">
-        <img src="/img/amp.jpg" />
+        <img src="/img/amp.jpg" width="100%" />
       </div>
     </div>);
   }

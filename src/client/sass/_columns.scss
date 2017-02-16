@@ -1,0 +1,9 @@
+.columns {
+  float: none;
+}
+
+.columns--2 {
+  column-count: 2;
+  column-gap: 4em;
+  column-rule: 1px solid $color-light-gray;
+}
