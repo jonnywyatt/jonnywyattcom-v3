@@ -16,7 +16,7 @@
   background-image: url(../svg/#{$name}.svg);
 }
 
-$icons: cv envelope github globe linkedin phone pin;
+$icons: cv envelope github globe linkedin phone pin chevron-left-mid-gray;
 
 @each $icon in $icons {
   .icon-#{$icon} {
@@ -24,19 +24,36 @@ $icons: cv envelope github globe linkedin phone pin;
   }
 }
 
+.icon--sm {
+  width: 14px;
+  height: 14px;
+}
+
 .icon-text {
   display: inline-block;
   position: relative;
-  padding-left: 60px;
+  padding-left: 20px;
+  &.icon-text--lg {
+    padding-left: 60px;
+  }
   > i {
     position: absolute;
     padding: 0;
     border: 0;
     left: 0;
     top: 50%;
-    width: 40px;
-    height: 40px;
-    transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    transform: translateY(-55%);
   }
+}
+
+.icon-text--sm > i {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-text--lg > i {
+  width: 40px;
+  height: 40px;
 }

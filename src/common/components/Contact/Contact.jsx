@@ -5,7 +5,7 @@ const About = () => (
     <div className="container-fluid-max">
       <div className="row">
         <div className="col-12-sm">
-          <div className="icon-text">
+          <div className="icon-text icon-text--lg">
             <i className="icon-envelope" />
             <span className="text-lg">jonnywyatt (at) yahoo.co.uk</span>
           </div>
