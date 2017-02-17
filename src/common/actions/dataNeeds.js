@@ -22,7 +22,8 @@ const actions = {
       const state = getState();
       let endpoint = (typeof window === 'undefined') ? state.apiEndpointRootAbsolute : state.apiEndpointRootRelative;
       endpoint = `${endpoint}/articles/${slug}`;
-
+      // clear article state before fetching new one, so article view is empty
+      dispatch(actions.receiveArticle({}));
       return request({ endpoint, state })
         .then((response) => {
           dispatch(actions.receiveArticle(response.data));
