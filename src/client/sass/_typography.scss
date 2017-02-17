@@ -1,4 +1,5 @@
 @import "./colours";
+@import "./breakpoints";
 
 @font-face {
   font-family: 'cooper_hewitt';
@@ -39,6 +40,7 @@ body {
 // typography
 .heading {
   font-weight: normal;
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -64,10 +66,6 @@ body {
 
 .heading--6 {
   font-size: 0.875rem;
-}
-
-.heading--inline {
-  display: inline-block;
 }
 
 // utility

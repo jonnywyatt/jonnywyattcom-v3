@@ -1,3 +1,4 @@
+@import "./breakpoints";
 
 .hidden-sm {
   display: none;
@@ -5,11 +6,8 @@
 
 // grid
 
-$width: 96%;
-$gutter: 4%;
-$breakpoint-sm: 33.75em; // 540px
-$breakpoint-md: 45em; // 720px
-$breakpoint-lg: 60em; // 960px
+$width: 94%;
+$gutter: 6%;
 
 .container {
   width: 90%;
@@ -35,7 +33,7 @@ $breakpoint-lg: 60em; // 960px
 
 .row [class^="col"] {
   float: left;
-  margin: 0.5rem 2%;
+  margin: 0.5rem 3%;
   min-height: 0.125rem;
 }
 
