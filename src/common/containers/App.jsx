@@ -4,7 +4,8 @@ import history from '../actions/history';
 
 const mapStateToProps = (state) => {
   return {
-    ...state.matchedRoute
+    ...state.matchedRoute,
+    error: state.error
   };
 };
 

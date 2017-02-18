@@ -1,4 +1,5 @@
 import request from '../utils/request';
+import errorActions from './error';
 
 const actions = {
   articles: () => {
@@ -12,7 +13,7 @@ const actions = {
           dispatch(actions.receiveArticles(response.data));
         })
         .catch(() => {
-          dispatch(actions.errorApi('An error occurred retrieving articles'));
+          dispatch(errorActions.error('An error occurred retrieving articles'));
         });
     };
   },
@@ -29,7 +30,7 @@ const actions = {
           dispatch(actions.receiveArticle(response.data));
         })
         .catch(() => {
-          dispatch(actions.errorApi(`An error occurred retrieving article: ${slug}`));
+          dispatch(errorActions.error('An error occurred retrieving the article'));
         });
     };
   },
@@ -47,14 +48,6 @@ const actions = {
       type: 'RECEIVE_ARTICLES',
       stateKey: 'articles',
       data: articles
-    };
-  },
-
-  errorApi: (msg) => {
-    return {
-      type: 'ERROR_API',
-      stateKey: 'errorApi',
-      data: msg
     };
   }
 };

@@ -5,6 +5,7 @@ import Header from '../components/Header/Header';
 import NavBar from '../components/NavBar/NavBar';
 import Articles from '../containers/Articles';
 import NewArticle from './NewArticle/NewArticle';
+import Error from '../containers/Error';
 
 class App extends Component {
   componentDidMount() {
@@ -26,6 +27,7 @@ class App extends Component {
         <main className="container-fluid-max">
           <div className="row">
             <div className="col-12 views">
+              { this.props.error && <Error /> }
               {
                 this.props.routeName === 'article-new' ?
                   <NewArticle />

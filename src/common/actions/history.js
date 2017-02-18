@@ -1,5 +1,6 @@
 import matchRoute from '../utils/match-route';
 import fetchDataNeeds from '../utils/fetch-data-needs';
+import errorActions from './error';
 import logger from '../utils/logger';
 
 const historyActions = {
@@ -29,6 +30,7 @@ const historyActions = {
 
   startRouteChange: (target) => {
     return (dispatch, getState) => {
+      dispatch(errorActions.error());
       const history = getState().history;
       const url = target.currentTarget.pathname;
       matchRoute(url, (err, matchedRoute) => {
