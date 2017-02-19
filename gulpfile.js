@@ -1,17 +1,17 @@
 /* eslint-disable no-console */
 
-import gulp from 'gulp' ;
-import GulpAutoprefixer from 'gulp-autoprefixer';
-import envify from 'envify';
-import sass from 'gulp-sass';
-import del from 'del' ;
-import Browserify from 'browserify' ;
-import babelify from 'babelify' ;
-import source from 'vinyl-source-stream';
-import buffer from 'vinyl-buffer';
-import browserSync from 'browser-sync';
-import uglify from 'gulp-uglify';
-import sourcemaps from 'gulp-sourcemaps';
+const gulp = require('gulp') ;
+const GulpAutoprefixer = require('gulp-autoprefixer');
+const envify = require('envify');
+const sass = require('gulp-sass');
+const del = require('del') ;
+const Browserify = require('browserify') ;
+const babelify = require('babelify') ;
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const browserSync = require('browser-sync');
+const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
 
 browserSync.create();
 const bundle = 'client.js';
