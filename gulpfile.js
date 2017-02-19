@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 
-const gulp = require('gulp') ;
+const gulp = require('gulp');
 const GulpAutoprefixer = require('gulp-autoprefixer');
 const envify = require('envify');
 const sass = require('gulp-sass');
-const del = require('del') ;
-const Browserify = require('browserify') ;
-const babelify = require('babelify') ;
+const del = require('del');
+const Browserify = require('browserify');
+const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const browserSync = require('browser-sync');
