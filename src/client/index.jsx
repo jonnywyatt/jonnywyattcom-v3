@@ -4,6 +4,7 @@ import History from 'html5-history';
 import { Provider } from 'react-redux';
 import storeFactory from '../common/utils/store-factory';
 import App from '../common/containers/App';
+import analytics from './analytics';
 
 let state = null;
 if (window.$REDUX_STATE) {
@@ -19,6 +20,7 @@ if (window.$REDUX_STATE) {
       () => {
         window.document.documentElement.classList.add('t-react-rendered');
         window.performance && window.performance.mark && window.performance.mark('app-interactive');
+        analytics(window, document);
       }
     );
   } catch (err) {
