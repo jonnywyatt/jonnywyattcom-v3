@@ -63,7 +63,7 @@ class MobileAnim extends Component {
         </g>
       </svg>
       <div className="mobile-anim__bitmap">
-        <img src="/img/amp.jpg" width="100%" />
+        <img src="/img/amp.jpg" srcSet="/img/amp-2x.jpg 2x" width="100%" />
       </div>
     </div>);
   }
