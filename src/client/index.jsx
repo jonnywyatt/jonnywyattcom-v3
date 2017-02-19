@@ -16,7 +16,10 @@ if (window.$REDUX_STATE) {
         <App />
       </Provider>,
       document.querySelector('.js-app'),
-      () => window.document.documentElement.classList.add('t-react-rendered')
+      () => {
+        window.document.documentElement.classList.add('t-react-rendered');
+        window.performance && window.performance.mark && window.performance.mark('app-interactive');
+      }
     );
   } catch (err) {
     /* eslint-disable no-console */
