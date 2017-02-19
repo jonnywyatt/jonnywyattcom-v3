@@ -11,7 +11,11 @@ import apiArticleFactory from './middleware/api-article';
 const app = express();
 const hbs = exphbs.create({
   extname: '.hbs',
-  defaultLayout: path.join(__dirname, '../../src/server/views/layout')
+  defaultLayout: path.join(__dirname, '../../src/server/views/layout'),
+  partialsDir: [
+    path.join(__dirname, '../../public/css/'),
+    path.join(__dirname, '../../src/server/views/')
+  ]
 });
 app.set('port', (process.env.PORT || 5000));
 app.engine('hbs', hbs.engine);
@@ -24,7 +28,7 @@ app.use(cookieParser());
 
 app.use(compression());
 app.use(express.static(path.join(__dirname, '../../public'), {
-  maxAge: 86400
+  maxAge: 31536000000
 }));
 
 const env = app.get('env');

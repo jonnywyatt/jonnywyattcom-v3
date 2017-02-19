@@ -12,6 +12,8 @@ const buffer = require('vinyl-buffer');
 const browserSync = require('browser-sync');
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
+const rev = require('gulp-rev');
+const rename = require('gulp-rename');
 
 browserSync.create();
 const bundle = 'client.js';
@@ -25,7 +27,9 @@ const destinationJS = destination + 'js/';
 const destinationCSS = destination + 'css/';
 const destinationSVG = destination + 'svg/';
 
-gulp.task('clean', cb => del([destination], cb));
+gulp.task('clean', () => {
+  return del([destination]);
+});
 
 gulp.task('build:js', () => {
   const browserifyOpts = {
@@ -51,23 +55,27 @@ gulp.task('build:js', () => {
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(destinationJS))
+    .pipe(rev())
+    .pipe(gulp.dest(destinationJS))
+    .pipe(rev.manifest({
+      base: destination,
+      merge: true
+    }))
     .pipe(gulp.dest(destinationJS));
 });
 
 gulp.task('build:sass', () => {
   gulp.src(sourceSASS)
     .pipe(sass({
-      errLogToConsole: true,
-      sourceMap: true,
-      outFile: destinationCSS,
-      sourceComments: true
+      errLogToConsole: true
     }))
     .pipe(new GulpAutoprefixer())
-    .pipe(gulp.dest(destinationCSS))
-    .pipe(browserSync.stream());
+    .pipe(rename('css.hbs'))
+    .pipe(gulp.dest(destinationCSS));
 });
 
-gulp.task('copy', () => {
+gulp.task('copy', ['clean'], () => {
   gulp.src(sourceSVG)
     .pipe(gulp.dest(destinationSVG));
   gulp.src('./src/client/pdf/**/*.pdf')
@@ -76,7 +84,7 @@ gulp.task('copy', () => {
     .pipe(gulp.dest(destination + 'img/'));
 });
 
-gulp.task('build', ['build:sass', 'copy', 'build:js']);
+gulp.task('build', ['copy', 'build:sass', 'build:js']);
 
 gulp.task('watch', ['build', 'browser-sync'], () => {
   return gulp.watch(watchPaths, ['build'])

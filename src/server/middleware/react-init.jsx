@@ -7,6 +7,7 @@ import App from '../../common/containers/App';
 import matchRoute from '../../common/utils/match-route';
 import fetchDataNeeds from '../../common/utils/fetch-data-needs';
 import seedStore from './helpers/seed-store-data';
+import staticAssetManifest from '../../../public/rev-manifest.json';
 
 export default appConfig => ({
   init: (req, res) => {
@@ -31,7 +32,10 @@ export default appConfig => ({
           );
           res.render('index', {
             appHtml,
-            appState: JSON.stringify(store.getState()).replace(/<\//g, '\\x3C/')
+            appState: JSON.stringify(store.getState()).replace(/<\//g, '\\x3C/'),
+            staticAssetManifest: {
+              js: staticAssetManifest['client.js']
+            }
           });
         })
         .catch((err) => {

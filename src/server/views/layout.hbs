@@ -5,12 +5,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/css/main.css' />
-    <script src="/js/client.js" defer></script>
+    <script src="/js/{{staticAssetManifest.js}}" defer></script>
+    <style>
+      {{>css}}
+    </style>
   </head>
   <body>
     {{{body}}}
-
     {{#if appState}}
       <script>
         window.$REDUX_STATE = {{{appState}}};
