@@ -83,6 +83,8 @@ gulp.task('copy', ['clean'], () => {
     .pipe(gulp.dest(destination + 'pdf/'));
   gulp.src('./src/client/img/**/*.*')
     .pipe(gulp.dest(destination + 'img/'));
+  gulp.src('./src/client/fonts/**/*.*')
+    .pipe(gulp.dest(destination + 'fonts/'));
 });
 
 gulp.task('build', ['copy', 'build:sass', 'build:js']);
