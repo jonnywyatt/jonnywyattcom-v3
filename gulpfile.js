@@ -68,7 +68,8 @@ gulp.task('build:js', () => {
 gulp.task('build:sass', () => {
   gulp.src(sourceSASS)
     .pipe(sass({
-      errLogToConsole: true
+      errLogToConsole: true,
+      outputStyle: 'compressed'
     }))
     .pipe(new GulpAutoprefixer())
     .pipe(rename('css.hbs'))
