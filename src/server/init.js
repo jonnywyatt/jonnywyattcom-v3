@@ -39,7 +39,7 @@ app.get('/api/articles/:slug', apiArticle.getBySlug);
 app.get('/api/articles', apiArticle.getAll);
 app.post('/api/articles', apiArticle.post);
 
-app.get('*', reactInit(appConfig).init);
+app.get('*', reactInit(appConfig, env).init);
 app.listen(app.get('port'), () => {
   logger.info('Node app is running on port ' + app.get('port'));
 });

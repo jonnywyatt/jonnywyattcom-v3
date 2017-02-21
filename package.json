@@ -6,15 +6,15 @@
     "start": "heroku local web",
     "mongo-local": "mongod --dbpath=./data",
     "dev": "nodemon -e js,jsx,hbs,json --watch src/ --exec node server.js",
-    "build": "npm run build-app && npm run build-assets",
+    "build-prod": "npm run build-app && ./node_modules/gulp/bin/gulp.js build --production",
     "build-app": "babel src -d dist -s",
     "watch-app": "babel src -w -d dist -s",
     "build-assets": "./node_modules/gulp/bin/gulp.js build",
     "watch-assets": "./node_modules/gulp/bin/gulp.js watch",
     "lint": "eslint --ext .js,.jsx .",
     "lint:fix": "eslint . --fix",
-    "test": "npm run build && npm run lint",
-    "heroku-postbuild": "npm rebuild node-sass && npm run build"
+    "test": "npm run build-prod && npm run lint",
+    "heroku-postbuild": "npm rebuild node-sass && npm run build-prod"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -45,6 +45,7 @@
     "express-handlebars": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-if": "^2.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-rev": "^7.1.2",
     "gulp-sass": "^3.1.0",
@@ -53,6 +54,7 @@
     "hbs": "~4.0.0",
     "html5-history": "^0.1.5",
     "husky": "^0.13.1",
+    "lazypipe": "^1.0.1",
     "lodash.get": "^4.4.2",
     "moment": "^2.17.1",
     "mongodb": "^2.2.16",
@@ -68,6 +70,7 @@
     "source-map-support": "^0.4.8",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
+    "yargs": "^6.6.0",
     "yarn": "^0.19.1"
   },
   "description": "Source for jonnywyatt.com",

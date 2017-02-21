@@ -5,7 +5,7 @@ const GulpAutoprefixer = require('gulp-autoprefixer');
 const envify = require('envify');
 const sass = require('gulp-sass');
 const del = require('del');
-const Browserify = require('browserify');
+const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
@@ -14,6 +14,8 @@ const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 const rev = require('gulp-rev');
 const rename = require('gulp-rename');
+const gulpif = require('gulp-if');
+const argv = require('yargs').argv;
 
 browserSync.create();
 const bundle = 'client.js';
@@ -32,13 +34,14 @@ gulp.task('clean', () => {
 });
 
 gulp.task('build:js', () => {
+  const isProduction = argv.production;
   const browserifyOpts = {
     cache: {},
     debug: true,
     packageCache: {},
     extensions: ['.jsx', '.js']
   };
-  new Browserify(index, browserifyOpts)
+  return browserify(index, browserifyOpts)
     .transform(babelify, {
       presets: ['node6', 'latest', 'react'],
       plugins: [
@@ -53,16 +56,16 @@ gulp.task('build:js', () => {
     .pipe(source(bundle))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(uglify())
+    .pipe(gulpif(isProduction, uglify()))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(destinationJS))
-    .pipe(rev())
-    .pipe(gulp.dest(destinationJS))
-    .pipe(rev.manifest({
+    .pipe(gulpif(isProduction, rev()))
+    .pipe(gulpif(isProduction, gulp.dest(destinationJS)))
+    .pipe(gulpif(isProduction, rev.manifest({
       base: destination,
       merge: true
-    }))
-    .pipe(gulp.dest(destinationJS));
+    })))
+    .pipe(gulpif(isProduction, gulp.dest(destinationJS)));
 });
 
 gulp.task('build:sass', () => {
@@ -89,7 +92,7 @@ gulp.task('copy', ['clean'], () => {
 
 gulp.task('build', ['copy', 'build:sass', 'build:js']);
 
-gulp.task('watch', ['build', 'browser-sync'], () => {
+gulp.task('watch', ['build'], () => {
   return gulp.watch(watchPaths, ['build'])
     .on('change', (e) => { console.log('\nFile ' + e.path + ' was ' + e.type + ', running js task'); });
 });

@@ -7,9 +7,8 @@ import App from '../../common/containers/App';
 import matchRoute from '../../common/utils/match-route';
 import fetchDataNeeds from '../../common/utils/fetch-data-needs';
 import seedStore from './helpers/seed-store-data';
-import staticAssetManifest from '../../../public/rev-manifest.json';
 
-export default appConfig => ({
+export default (appConfig, env) => ({
   init: (req, res) => {
     matchRoute(req.originalUrl, (error, matchedRoute) => {
       if (error) {
@@ -30,12 +29,15 @@ export default appConfig => ({
               <App />
             </Provider>
           );
+          let jsBundle = 'client.js';
+          if (env === 'production') {
+            const staticAssetManifest = require('../../../public/rev-manifest.json'); // eslint-disable-line
+            jsBundle = staticAssetManifest[jsBundle];
+          }
           res.render('index', {
             appHtml,
             appState: JSON.stringify(store.getState()).replace(/<\//g, '\\x3C/'),
-            staticAssetManifest: {
-              js: staticAssetManifest['client.js']
-            }
+            jsBundle
           });
         })
         .catch((err) => {
