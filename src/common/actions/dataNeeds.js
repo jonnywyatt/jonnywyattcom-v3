@@ -35,6 +35,15 @@ const actions = {
     };
   },
 
+  deferredDataNeeds: () => {
+    return (dispatch, getState) => {
+      const state = getState();
+      if (state.matchedRoute.deferredDataNeed) {
+        dispatch(actions[state.matchedRoute.deferredDataNeed](state.matchedRoute.dataNeedParam));
+      }
+    };
+  },
+
   receiveArticle: (article) => {
     return {
       type: 'RECEIVE_ARTICLE',

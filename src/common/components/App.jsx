@@ -13,6 +13,7 @@ class App extends Component {
     if (window.performance && window.performance.mark) {
       window.performance.mark('app-interactive');
     }
+    this.props.afterAppMounted();
   }
 
   render() {

@@ -9,6 +9,7 @@ export default (path, cb) => {
   switch (routeData.path) {
     case '/':
       routeData.routeName = 'home';
+      routeData.deferredDataNeed = 'articles';
       break;
 
     case '/contact':

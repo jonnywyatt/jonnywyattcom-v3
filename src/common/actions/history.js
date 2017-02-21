@@ -15,7 +15,7 @@ const historyActions = {
         const matchedRoute = history.getState().data;
         if (state.matchedRoute.path !== matchedRoute.path) {
           window.document.documentElement.classList.add('loading');
-          fetchDataNeeds(dispatch, matchedRoute, state)
+          fetchDataNeeds(dispatch, matchedRoute, getState())
             .then(() => {
               window.document.documentElement.classList.remove('loading');
               // if (typeof window !== 'undefined' && !matchedRoute.preventAnalyticsEvents) {
