@@ -15,6 +15,10 @@ export default () => {
           logger.error(err);
           return res.status(500);
         }
+        if (!articles) {
+          logger.info('Article not found: ' + req.params.slug);
+          return res.status(404);
+        }
         res.json(formatCreatedDate(articles[0]) || {});
       });
     },
