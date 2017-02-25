@@ -24,7 +24,7 @@ class MobileAnim extends Component {
     nanoajax.ajax({
       url: '/svg/mobile-anim.svg'
     }, (code, res = '') => {
-      this.setState({ 'svg': res });
+      this.setState({ svg: res });
     });
   }
 
