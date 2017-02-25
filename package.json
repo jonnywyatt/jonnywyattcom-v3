@@ -5,7 +5,8 @@
   "scripts": {
     "start": "heroku local web",
     "mongo-local": "mongod --dbpath=./data",
-    "dev": "nodemon -e js,jsx,hbs,json --watch src/ --exec node server.js",
+    "start-dev": "nodemon -e js,jsx,hbs,json --watch src/ --exec node server.js",
+    "start-prod": "NODE_ENV=production node server.js",
     "build-prod": "npm run build-app && ./node_modules/gulp/bin/gulp.js build --production",
     "build-app": "babel src -d dist -s",
     "watch-app": "babel src -w -d dist -s",
