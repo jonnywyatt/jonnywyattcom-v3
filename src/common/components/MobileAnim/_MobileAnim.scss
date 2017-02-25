@@ -16,12 +16,14 @@
 
 .mobile-anim__bitmap {
   position: absolute;
+  top: 0;
   opacity: 0;
   transition: opacity 0.5s linear;
 }
 
 .mobile-anim__svg {
   position: absolute;
+  top: 0;
   z-index: 1;
   transition: opacity 0.5s linear;
   width: 100%;
