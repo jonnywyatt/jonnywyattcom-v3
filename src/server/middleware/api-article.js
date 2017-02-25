@@ -28,6 +28,7 @@ export default () => {
           logger.error(err);
           return res.status(500);
         }
+        res.setHeader('Cache-Control', 'no-cache');
         res.json(articles.map(article => formatCreatedDate(article)));
       });
     },
