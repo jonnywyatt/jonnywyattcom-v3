@@ -2,9 +2,14 @@ import React from 'react';
 import { render } from 'react-dom';
 import History from 'html5-history';
 import { Provider } from 'react-redux';
+import Promise from 'promise-polyfill';
 import storeFactory from '../common/utils/store-factory';
 import App from '../common/containers/App';
 import analytics from './analytics';
+
+if (!window.Promise) {
+  window.Promise = Promise;
+}
 
 let state = null;
 if (window.$REDUX_STATE) {
