@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import History from 'html5-history';
 import { Provider } from 'react-redux';
-import Promise from 'promise-polyfill';
+import { Promise } from 'es6-promise-polyfill';
 import storeFactory from '../common/utils/store-factory';
 import App from '../common/containers/App';
 import analytics from './analytics';
