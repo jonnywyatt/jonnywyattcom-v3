@@ -4646,9 +4646,9 @@ progress@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/progress/-/progress-1.1.8.tgz#e260c78f6161cdd9b0e56cc3e0a85de17c7a57be"
 
-promise-polyfill@^6.0.2:
-  version "6.0.2"
-  resolved "http://npm.tescloud.com/promise-polyfill/-/promise-polyfill-6.0.2.tgz#d9c86d3dc4dc2df9016e88946defd69b49b41162"
+promise-polyfill@6.0.1:
+  version "6.0.1"
+  resolved "http://npm.tescloud.com/promise-polyfill/-/promise-polyfill-6.0.1.tgz#cc659574f6e737c97a9e239042da5b1f5ea1b646"
 
 promise@^7.0.0, promise@^7.1.1:
   version "7.1.1"
