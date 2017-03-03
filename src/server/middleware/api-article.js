@@ -1,9 +1,12 @@
 import moment from 'moment';
+import _compact from 'lodash.compact';
 import ModelArticle from './helpers/model-article';
 import logger from '../../common/utils/logger';
 
 const formatCreatedDate = (article) => {
-  article.createdDateDisplay = moment(article.createdDate).format('D MMM YYYY');
+  if (article) {
+    article.createdDateDisplay = moment(article.createdDate).format('D MMM YYYY');
+  }
   return article;
 };
 
@@ -29,7 +32,8 @@ export default () => {
           return res.status(500);
         }
         res.setHeader('Cache-Control', 'no-cache');
-        res.json(articles.map(article => formatCreatedDate(article)));
+        const json = _compact(articles.map(article => formatCreatedDate(article))) || [];
+        res.json(json);
       });
     },
     post: (req, res) => {
