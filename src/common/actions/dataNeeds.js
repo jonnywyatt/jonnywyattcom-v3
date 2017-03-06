@@ -18,13 +18,22 @@ const actions = {
     };
   },
 
+  articleFromCache: (slug, articles) => {
+    if (!articles) return null;
+    const found = articles.filter(article => article.slug === slug);
+    if (!found.length) return null;
+    return found[0];
+  },
+
   article: (slug) => {
     return (dispatch, getState) => {
-      const state = getState();
-      let endpoint = (typeof window === 'undefined') ? state.apiEndpointRootAbsolute : state.apiEndpointRootRelative;
-      endpoint = `${endpoint}/articles/${slug}`;
       // clear article state before fetching new one, so article view is empty
       dispatch(actions.receiveArticle({}));
+      const state = getState();
+      const articleFromCache = actions.articleFromCache(slug, state.articles);
+      if (articleFromCache) return Promise.resolve(dispatch(actions.receiveArticle(articleFromCache)));
+      let endpoint = (typeof window === 'undefined') ? state.apiEndpointRootAbsolute : state.apiEndpointRootRelative;
+      endpoint = `${endpoint}/articles/${slug}`;
       return request({ endpoint, state })
         .then((response) => {
           dispatch(actions.receiveArticle(response.data));
