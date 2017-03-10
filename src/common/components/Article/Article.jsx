@@ -6,7 +6,7 @@ const Article = props => (
       <a
         className="text-sm icon-text icon-text--sm"
         href="/articles"
-        onClick={props.startRouteChange}><i className="icon-chevron-left-mid-gray padding-right-xs" /> Back
+        onClick={props.startRouteChange}><i className="icon-chevron-left-blue padding-right-xs" /> Back
         to list</a>
     </div>
     <h1 className="heading heading--2 margin-bottom-md">{ props.title }</h1>

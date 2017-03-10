@@ -16,7 +16,7 @@
   background-image: url(/svg/#{$name}.svg);
 }
 
-$icons: cv envelope github globe linkedin phone pin chevron-left-mid-gray;
+$icons: cv envelope github globe linkedin phone pin chevron-left-blue;
 
 @each $icon in $icons {
   .icon-#{$icon} {
