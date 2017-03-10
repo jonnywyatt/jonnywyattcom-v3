@@ -35,7 +35,7 @@ class App extends Component {
                   :
                   <div
                     className="views__inner"
-                    style={{ transform: `translateX(-${viewIndex * (100 / 3)}%)` }}>
+                    style={{ transform: `translate3D(-${viewIndex * (100 / 3)}%, 0, 0)` }}>
                     <Home />
                     <Articles />
                     <Contact />
