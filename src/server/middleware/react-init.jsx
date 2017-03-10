@@ -10,7 +10,7 @@ import seedStore from './helpers/seed-store-data';
 
 export default (appConfig, env) => ({
   init: (req, res) => {
-    matchRoute(req.originalUrl, (error, matchedRoute) => {
+    matchRoute(req.path, (error, matchedRoute) => {
       if (error) {
         return res.status(error.httpCode).send();
       }
