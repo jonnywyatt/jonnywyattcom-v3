@@ -16,8 +16,26 @@
   width: 50%;
 }
 
-.article img {
-  @media only screen and (max-width: $breakpoint-md) {
-    width: 100%;
+.article {
+  img {
+    @media only screen and (max-width: $breakpoint-md) {
+      width: 100%;
+    }
+  }
+  blockquote {
+    font-style: italic;
+    position: relative;
+    margin: 20px 0;
+    padding-left: 40px;
+    &:before {
+      content: '“';
+      display: block;
+      font-size: 5rem;
+      position: absolute;
+      left: -15px;
+      top: 0;
+      line-height: 1;
+      color: $color-mid-gray;
+    }
   }
 }
