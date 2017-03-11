@@ -29,6 +29,7 @@ class Header extends Component {
 
   render() {
     return (
+      <div>
       <div className={`header ${this.state.invertHeader ? 'header--inverted' : ''}`}>
         <div className="header__bg" />
         <div className="container-fluid-max">
@@ -47,6 +48,14 @@ class Header extends Component {
                   <span className="header__byline-label">Front end & Node.js developer</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div className="header__navbar container-fluid-max">
+          <div className="row">
+            <div className="col-12-sm">
+              <Menu fullMenu />
             </div>
           </div>
         </div>

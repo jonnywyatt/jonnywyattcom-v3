@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import Home from '../components/Home/Home';
 import Contact from './Contact/Contact';
 import Header from '../components/Header/Header';
-import NavBar from '../components/NavBar/NavBar';
 import Articles from '../containers/Articles';
 import NewArticle from './NewArticle/NewArticle';
 import Error from '../containers/Error';
@@ -24,7 +23,6 @@ class App extends Component {
     return (
       <div className="app" data-view={this.props.routeName}>
         <Header />
-        <NavBar />
         <main className="container-fluid-max">
           <div className="row">
             <div className="col-12 views">
