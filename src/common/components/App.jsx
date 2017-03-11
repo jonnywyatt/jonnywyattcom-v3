@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import Home from '../components/Home/Home';
 import Contact from './Contact/Contact';
 import Header from '../components/Header/Header';
@@ -6,7 +6,7 @@ import Articles from '../containers/Articles';
 import NewArticle from './NewArticle/NewArticle';
 import Error from '../containers/Error';
 
-class App extends Component {
+class App extends React.Component {
   componentDidMount() {
     this.props.listenForRouteChanges();
     if (window.performance && window.performance.mark) {

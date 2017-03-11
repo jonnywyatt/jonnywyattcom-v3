@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import nanoajax from 'nanoajax';
 
-class MobileAnim extends Component {
+class MobileAnim extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,8 +11,11 @@ class MobileAnim extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: typeof window !== 'undefined' });
     this.loadSVG();
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return ((nextState.loaded !== this.state.loaded)  || (nextState.svg !== this.state.svg));
   }
 
   componentDidUpdate() {
@@ -24,6 +27,7 @@ class MobileAnim extends Component {
     nanoajax.ajax({
       url: '/svg/mobile-anim.svg'
     }, (code, res = '') => {
+      this.setState({ loading: true });
       this.setState({ svg: res });
     });
   }
