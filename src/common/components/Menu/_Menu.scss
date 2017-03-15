@@ -28,9 +28,12 @@
 
 .menu__item {
   position: relative;
-  margin-right: 10px;
+  margin-right: 8px;
   &:last-child {
     margin-right: 0;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    margin-right: 10px;
   }
   .menu--full & {
     background-color: $color-white;
@@ -50,7 +53,7 @@
   text-align: center;
   transition: color 0.3s;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.1em;
   cursor: pointer;
   user-select: none;
   -webkit-touch-callout: none;
@@ -81,7 +84,6 @@
 
 .menu__item--current .menu__link {
   color: $color-cherry-light;
-  font-weight: bold;
   .menu--full & {
     font-weight: normal;
     color: $color-cherry;
