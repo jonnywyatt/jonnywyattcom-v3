@@ -49,10 +49,15 @@
     "react/no-danger": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "no-unused-expressions": 0,
-    "import/no-dynamic-require": 0
+    "import/no-dynamic-require": 0,
+    "prefer-arrow-callback": 0,
+    "func-names": 0
   },
   "globals": {
     "window": true,
     "document": true
+  },
+  "env": {
+    "mocha": true
   }
 }
