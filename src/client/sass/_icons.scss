@@ -30,7 +30,7 @@ $icons: cv envelope github globe linkedin phone pin chevron-left-blue chevron-ri
 }
 
 .icon-text {
-  display: inline-block;
+  display: inline;
   position: relative;
   padding-left: 20px;
   &.icon-text--lg {
@@ -41,7 +41,7 @@ $icons: cv envelope github globe linkedin phone pin chevron-left-blue chevron-ri
     padding: 0;
     border: 0;
     left: 0;
-    top: 50%;
+    top: 0.5em;
     width: 28px;
     height: 28px;
     transform: translateY(-50%);
