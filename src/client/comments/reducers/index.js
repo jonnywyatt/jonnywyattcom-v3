@@ -1,6 +1,11 @@
 function createCommentObject(data, state) {
   const ids = Object.keys(state);
-  const newId = ids.length ? ids.sort().pop() + 1 : 1;
+  let newId = 1;
+  if (ids.length) {
+    const lastId = ids.sort().pop();
+    newId = parseInt(lastId, 10) + 1;
+    if (isNaN(newId)) return false;
+  }
   const ms = Date.now();
   const date = new Date(ms);
   return {
@@ -13,12 +18,17 @@ function createCommentObject(data, state) {
   };
 }
 
-module.exports = (state={}, action) => {
+module.exports = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_COMMENT': {
       const newState = Object.assign({}, state);
       const newComment = createCommentObject(action.data, state);
-      newState[newComment.id] = newComment;
+      if (newComment) newState[newComment.id] = newComment;
+      return newState;
+    }
+    case 'REMOVE_COMMENT': {
+      const newState = Object.assign({}, state);
+      newState[action.data.id].deleted = true;
       return newState;
     }
     default: {
