@@ -11,10 +11,7 @@ class Home extends React.Component {
     return (
       <div className="view home">
         <MobileAnim />
-        <p className="margin-top-none"><strong>I have a very strong track record of rapidly
-          delivering
-          quality
-          software.</strong></p>
+        <p className="margin-top-none"><a className="icon-text icon-text--sm" href="/articles/react-learnings" onClick={this.props.startRouteChange}><i className="icon-chevron-right-blue padding-right-xs" />New article - <span className="text-bold">'Learnings from 2 years of using React'</span></a></p>
         <p>The core of my skillset is front end and I’ve added over 2 years’ solid experience in
           Node.js and React. I have a good handle on the array of developments in the Javascript
           space, plus the experience to know which of them to benefit from. I’m passionate about

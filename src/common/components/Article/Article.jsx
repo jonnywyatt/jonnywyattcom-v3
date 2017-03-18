@@ -9,8 +9,7 @@ class Article extends React.Component {
             className="text-sm icon-text icon-text--sm"
             href="/articles"
             onClick={this.props.startRouteChange}>
-            <i className="icon-chevron-left-blue padding-right-xs" /> Back
-            to list</a>
+            <i className="icon-chevron-left-blue padding-right-xs" /> All articles</a>
         </div>
         <h1 className="heading heading--2 margin-bottom-md">{ this.props.title }</h1>
         <div className="margin-bottom-ml">
