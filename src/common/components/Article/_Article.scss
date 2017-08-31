@@ -1,7 +1,7 @@
 .article {
   font-size: 1.15rem;
   font-weight: 200;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .article__image {
@@ -37,5 +37,8 @@
       line-height: 1;
       color: $color-mid-gray;
     }
+  }
+  li {
+    margin-bottom: 10px;
   }
 }
