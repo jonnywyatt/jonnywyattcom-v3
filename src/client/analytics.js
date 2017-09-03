@@ -1,10 +1,22 @@
-import timing from 'timing.js';
-
 const createScript = (w, d) => {
   const s = d.createElement('script');
   s.defer = 1;
   s.src = 'https://www.google-analytics.com/analytics.js';
   d.documentElement.appendChild(s);
+};
+
+const appStarted = (w) => {
+  if (w.performance) {
+    w.ga('send', 'timing', 'Page load', 'app-started', Math.round(w.performance.now()));
+    w.performance.mark('app-started');
+  }
+};
+
+const firstContentfulPaint = (w) => {
+  w.performance.getEntriesByType('paint').forEach((entry) => {
+    if (entry.name === 'first-contentful-paint')
+      w.ga('send', 'timing', 'Page load', entry.name, Math.round(entry.startTime));
+  });
 };
 
 module.exports = (w, d, gaKey) => {
@@ -15,9 +27,6 @@ module.exports = (w, d, gaKey) => {
   w.ga.l = +new Date;
   w.ga('create', gaKey, 'auto');
   w.ga('send', 'pageview');
-  w.ga('send', 'timing', 'Page load', 'firstPaint', Math.round(timing.getTimes().firstPaintTime));
-  if (w.performance) {
-    w.ga('send', 'timing', 'Page load', 'appStarted', Math.round(w.performance.now()));
-    w.performance.mark('appStarted');
-  }
+  appStarted(w);
+  firstContentfulPaint(w);
 };
