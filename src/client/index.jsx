@@ -24,8 +24,7 @@ if (window.$REDUX_STATE) {
       document.querySelector('.js-app'),
       () => {
         window.document.documentElement.classList.add('t-react-rendered');
-        window.performance && window.performance.mark && window.performance.mark('app-interactive');
-        analytics(window, document);
+        analytics(window, document, 'UA-58066002-1');
       }
     );
   } catch (err) {

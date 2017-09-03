@@ -1,17 +1,23 @@
-/* eslint-disable */
-export default (w, d) => {
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-  })(w, d, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+import timing from 'timing.js';
 
-  ga('create', 'UA-58066002-1', 'auto');
-  ga('send', 'pageview');
+const createScript = (w, d) => {
+  const s = d.createElement('script');
+  s.defer = 1;
+  s.src = 'https://www.google-analytics.com/analytics.js';
+  d.documentElement.appendChild(s);
+};
+
+module.exports = (w, d, gaKey) => {
+  createScript(w, d);
+  w.ga = w.ga || function (...args) {
+    (w.ga.q = w.ga.q || []).push(args);
+  };
+  w.ga.l = +new Date;
+  w.ga('create', gaKey, 'auto');
+  w.ga('send', 'pageview');
+  w.ga('send', 'timing', 'Page load', 'firstPaint', timing.getTimes().firstPaintTime);
+  if (w.performance) {
+    w.ga('send', 'timing', 'Page load', 'appStarted', w.performance.now());
+    w.performance.mark('appStarted');
+  }
 };
