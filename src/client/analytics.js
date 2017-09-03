@@ -15,9 +15,9 @@ module.exports = (w, d, gaKey) => {
   w.ga.l = +new Date;
   w.ga('create', gaKey, 'auto');
   w.ga('send', 'pageview');
-  w.ga('send', 'timing', 'Page load', 'firstPaint', timing.getTimes().firstPaintTime);
+  w.ga('send', 'timing', 'Page load', 'firstPaint', Math.round(timing.getTimes().firstPaintTime));
   if (w.performance) {
-    w.ga('send', 'timing', 'Page load', 'appStarted', w.performance.now());
+    w.ga('send', 'timing', 'Page load', 'appStarted', Math.round(w.performance.now()));
     w.performance.mark('appStarted');
   }
 };
