@@ -24,7 +24,7 @@ module.exports = (w, d, gaKey) => {
   w.ga = w.ga || function (...args) {
     (w.ga.q = w.ga.q || []).push(args);
   };
-  w.ga.l = +new Date;
+  w.ga.l = +new Date();
   w.ga('create', gaKey, 'auto');
   w.ga('send', 'pageview');
   appStarted(w);
