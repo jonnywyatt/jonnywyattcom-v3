@@ -15,7 +15,6 @@
 .article__image--small {
   width: 50%;
 }
-
 .article {
   img {
     @media only screen and (max-width: $breakpoint-md) {
@@ -41,4 +40,11 @@
   li {
     margin-bottom: 10px;
   }
+}
+
+.article__image--full-width {
+  float: none;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
