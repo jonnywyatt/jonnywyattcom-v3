@@ -88,6 +88,8 @@ gulp.task('copy', ['clean'], () => {
     .pipe(gulp.dest(destination + 'img/'));
   gulp.src('./src/client/fonts/**/*.*')
     .pipe(gulp.dest(destination + 'fonts/'));
+  gulp.src('./src/client/*.txt')
+    .pipe(gulp.dest(destination));
 });
 
 gulp.task('build', ['copy', 'build:sass', 'build:js']);
