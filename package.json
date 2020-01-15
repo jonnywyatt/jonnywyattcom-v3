@@ -78,7 +78,7 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^6.6.0",
-    "yarn": "^0.19.1"
+    "yarn": "^1.17.3"
   },
   "description": "Source for jonnywyatt.com",
   "main": "./src/server/app.js",
