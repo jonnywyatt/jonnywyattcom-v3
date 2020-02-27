@@ -1,6 +1,0 @@
-{
-  "presets": ["node6", "latest", "react"],
-  "plugins": [
-    "add-module-exports", "transform-es2015-destructuring", "transform-object-rest-spread"
-  ]
-}

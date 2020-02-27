@@ -29,7 +29,8 @@ const destinationJS = destination + 'js/';
 const destinationCSS = destination + 'css/';
 const destinationSVG = destination + 'svg/';
 
-gulp.task('clean', () => {
+gulp.task('clean',
+  () => {
   return del([destination]);
 });
 

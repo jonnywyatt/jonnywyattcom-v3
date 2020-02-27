@@ -27,9 +27,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(compression());
+app.use(express.static(path.join(__dirname, '../../dist'), {
+  maxAge: 31536000000
+}));
+
 app.use(express.static(path.join(__dirname, '../../public'), {
   maxAge: 31536000000
 }));
+
 
 const env = app.get('env');
 const appConfig = require(`../../config/${env}.json`);
@@ -44,4 +49,4 @@ app.listen(app.get('port'), () => {
   logger.info('Node app is running on port ' + app.get('port'));
 });
 
-module.exports = app;
+export default app;

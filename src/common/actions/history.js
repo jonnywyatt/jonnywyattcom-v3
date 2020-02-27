@@ -10,20 +10,22 @@ const historyActions = {
       const history = state.history;
       /* We need to populate the history state with data for the current page.
        So if the user navigates away then clicks the back button, its state can be restored */
-      history.replaceState(state.matchedRoute, null, document.location.href);
-      history.Adapter.bind(window, 'statechange', () => {
-        const matchedRoute = history.getState().data;
-        if (state.matchedRoute.path !== matchedRoute.path) {
-          window.document.documentElement.classList.add('loading');
-          fetchDataNeeds(dispatch, matchedRoute, getState())
-            .then(() => {
-              window.document.documentElement.classList.remove('loading');
-              // if (typeof window !== 'undefined' && !matchedRoute.preventAnalyticsEvents) {
-              //   dispatch(actions.analyticsPageView(matchedRoute));
-              // }
-            });
+      history.replace(state.matchedRoute, null, document.location.href);
+      history.listen((location, action) => {
+        if (action === 'PUSH') {
+          const matchedRoute = location;
+          if (state.matchedRoute.path !== matchedRoute.path) {
+            window.document.documentElement.classList.add('loading');
+            fetchDataNeeds(dispatch, matchedRoute, getState())
+              .then(() => {
+                window.document.documentElement.classList.remove('loading');
+                // if (typeof window !== 'undefined' && !matchedRoute.preventAnalyticsEvents) {
+                //   dispatch(actions.analyticsPageView(matchedRoute));
+                // }
+              });
+          }
+          dispatch(historyActions.afterRouteChange(matchedRoute));
         }
-        dispatch(historyActions.afterRouteChange(matchedRoute));
       });
     };
   },
@@ -40,7 +42,7 @@ const historyActions = {
         }
         target.preventDefault();
         window.scrollTo(0, 0);
-        history.pushState(matchedRoute, null, url);
+        history.push(matchedRoute, null, url);
       });
     };
   },

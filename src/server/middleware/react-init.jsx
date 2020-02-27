@@ -29,11 +29,11 @@ export default (appConfig, env) => ({
               <App />
             </Provider>
           );
-          let jsBundle = 'client.js';
-          if (env === 'production') {
-            const staticAssetManifest = require('../../../public/rev-manifest.json'); // eslint-disable-line
-            jsBundle = staticAssetManifest[jsBundle];
-          }
+          let jsBundle = 'index.js';
+          // if (env === 'production') {
+          //   const staticAssetManifest = require('../../../public/rev-manifest.json'); // eslint-disable-line
+          //   jsBundle = staticAssetManifest[jsBundle];
+          // }
           res.render('index', {
             appHtml,
             appState: JSON.stringify(store.getState()).replace(/<\//g, '\\x3C/'),

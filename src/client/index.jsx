@@ -1,11 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import History from 'html5-history';
+import {createBrowserHistory} from 'history';
 import { Provider } from 'react-redux';
 import { Promise } from 'es6-promise-polyfill';
 import storeFactory from '../common/utils/store-factory';
 import App from '../common/containers/App';
 import analytics from './analytics';
+import './sass/main.scss';
 
 if (!window.Promise) {
   window.Promise = Promise;
@@ -14,7 +15,7 @@ if (!window.Promise) {
 let state = null;
 if (window.$REDUX_STATE) {
   state = window.$REDUX_STATE;
-  state.history = History;
+  state.history = createBrowserHistory();
   const store = storeFactory(state);
   try {
     render(
