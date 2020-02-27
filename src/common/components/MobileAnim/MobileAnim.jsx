@@ -25,7 +25,7 @@ class MobileAnim extends React.Component {
   loadSVG() {
     this.animatedOnce = false;
     nanoajax.ajax({
-      url: '/svg/mobile-anim.svg'
+      url: '/public/svg/mobile-anim.svg'
     }, (code, res = '') => {
       this.setState({ loading: true });
       this.setState({ svg: res });
@@ -62,7 +62,7 @@ class MobileAnim extends React.Component {
     return (<div ref={(el) => { this.svgContainer = el; }} className={`mobile-anim ${this.state.loaded ? ' mobile-anim--loaded' : ''} ${this.state.loading ? ' mobile-anim--loading' : ''}`}>
       <div dangerouslySetInnerHTML={{ __html: this.state.svg }} />
       <div className="mobile-anim__bitmap">
-        <img src="/img/amp.jpg" srcSet="/img/amp-2x.jpg 2x" width="100%" />
+        <img src="/public/img/amp.jpg" srcSet="/public/img/amp-2x.jpg 2x" width="100%" />
       </div>
     </div>);
   }

@@ -13,7 +13,7 @@
 
 @mixin icon-content($name) {
   @extend %icon;
-  background-image: url(/svg/#{$name}.svg);
+  background-image: url(/public/svg/#{$name}.svg);
 }
 
 $icons: cv envelope github globe linkedin phone pin chevron-left-blue chevron-right-blue;
