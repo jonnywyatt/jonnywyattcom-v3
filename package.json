@@ -80,7 +80,7 @@
     "vinyl-source-stream": "^1.1.0",
     "webpack": "^4.41.6",
     "yargs": "^6.6.0",
-    "yarn": "^0.19.1"
+    "yarn": "^1.22.0"
   },
   "description": "Source for jonnywyatt.com",
   "main": "./src/server/app.js",
