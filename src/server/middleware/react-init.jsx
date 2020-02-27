@@ -8,7 +8,7 @@ import matchRoute from '../../common/utils/match-route';
 import fetchDataNeeds from '../../common/utils/fetch-data-needs';
 import seedStore from './helpers/seed-store-data';
 
-export default (appConfig, env) => ({
+export default (appConfig) => ({
   init: (req, res) => {
     matchRoute(req.path, (error, matchedRoute) => {
       if (error) {

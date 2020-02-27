@@ -1,4 +1,5 @@
 var path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: "./src/client/index.jsx",
@@ -7,6 +8,23 @@ module.exports = {
     filename: "index.js",
     publicPath: "/js"
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -20,7 +38,7 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: "style-loader" // creates style nodes from JS strings
+            loader: MiniCssExtractPlugin.loader
           },
           {
             loader: "css-loader" // translates CSS into CommonJS

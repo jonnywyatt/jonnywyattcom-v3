@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(compression());
-app.use(express.static(path.join(__dirname, '../../dist'), {
+app.use('/client', express.static(path.join(__dirname, '../../dist/client'), {
   maxAge: 31536000000
 }));
 
