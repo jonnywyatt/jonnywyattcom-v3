@@ -42,7 +42,7 @@
     "cookie-parser": "~1.4.3",
     "core-js": "^3.6.4",
     "css-loader": "^3.4.2",
-    "debug": "~2.2.0",
+    "debug": "~2.6.9",
     "del": "^2.2.2",
     "envify": "^4.0.0",
     "es6-promise-polyfill": "^1.2.0",
