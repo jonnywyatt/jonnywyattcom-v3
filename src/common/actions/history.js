@@ -10,13 +10,13 @@ const historyActions = {
       const history = state.history;
       /* We need to populate the history state with data for the current page.
        So if the user navigates away then clicks the back button, its state can be restored */
-      history.replace(state.matchedRoute, null, document.location.href);
+      history.replace(document.location.pathname, state.matchedRoute );
       history.listen((location, action) => {
-        if (action === 'PUSH') {
+        if (action !== 'REPLACE') {
           const matchedRoute = location;
-          if (state.matchedRoute.path !== matchedRoute.path) {
+          if (state.matchedRoute.path !== matchedRoute.pathname) {
             window.document.documentElement.classList.add('loading');
-            fetchDataNeeds(dispatch, matchedRoute, getState())
+            fetchDataNeeds(dispatch, matchedRoute.state, getState())
               .then(() => {
                 window.document.documentElement.classList.remove('loading');
                 // if (typeof window !== 'undefined' && !matchedRoute.preventAnalyticsEvents) {
@@ -42,7 +42,7 @@ const historyActions = {
         }
         target.preventDefault();
         window.scrollTo(0, 0);
-        history.push(matchedRoute, null, url);
+        history.push(url, matchedRoute);
       });
     };
   },
@@ -51,7 +51,7 @@ const historyActions = {
     return {
       type: 'AFTER_ROUTE_CHANGE',
       stateKey: 'matchedRoute',
-      data: matchedRoute
+      data: matchedRoute.state
     };
   }
 };
