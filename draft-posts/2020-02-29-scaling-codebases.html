@@ -1,0 +1,107 @@
+<p>Front end code can proliferate quicker than in backend APIs / services. It can be harder to test than pure units of backend logic, eg it's tricky to automate tests for visual regressions; so when faced with making an intentional breaking change to a component, people will often cautiously decide to extend or copy instead.
+  </p>
+<p>When pressure to pump out new features is unrelenting (ie any startup, ever), the codebase for a single web app will balloon rapidly. If our team stays small over time, we might stick with this setup. The code is cluttered and deployments might get
+  slower over time as the number of tests increases; but with a single group of developers, it's workable.</p>
+<p>
+  We could just allow the monolith to continue to grow, if we decide it's not that painful. We can just keep hanging onto the rising balloon and hope it doesn't sail too high to jump off later..</p>
+<p>Anyway, some things are just easier with one codebase.</p>
+<ul>
+  <li>a single Javascript build lets us chunk your code easily for efficient delivery to the browser</li>
+  <li>a single router makes it easy to add slick client-side navigation</li>
+  <li>one CI pipeline to maintain and monitor</li>
+  <li>easy to co-ordinate releases with a single deploy</li>
+</ul>
+<p>And other things just seem easier, at least to the squad that grows and owns the monolith</p>
+<ul>
+  <li>we know exactly where everything is and how / where to make new changes</li>
+  <li>there's an increasing list of gotcha's and pitfalls, but we have a handle on them, even if they aren't all
+    documented yet
+  </li>
+  <li>It's easy to gatekeep a single codebase - standards, contributions and even releases can be regulated by the
+    team
+  </li>
+</ul>
+<h2>The difficult teenage years</h2>
+<p>
+  We've piled on users! Ambition for the product scales in line; now additional dev teams are being hired.</p>
+<p>
+  A different set of growing pains emerge.</p>
+<ul>
+  <li>newly-hired developers don't know the labyrinth or the pitfalls; they want to prove themselves useful quickly. Is it not possible to make and release a change simply? Many top-drawer software teams (famously, Facebook) pride
+    themselves that new devs can get their first commit into production within days or even hours of arriving.
+  </li>
+  <li>the gatekeeper model, or even any division of skillsets, emasculates developers who are ready to take
+    responsibility for code, quality and monitoring.
+  </li>
+  <li>inevitably, any codebase that was scaled quickly (or in fact, any codebase at all) will have made wrong turns and
+    accrued tech debt; if you helped build the monolith your inside knowledge will carry you over the bumps every day;
+    and it's always harder to objectively see how much impetus is slowed by the tech debt we created ourselves
+  </li>
+</ul>
+<p>
+  <strong>The new dev teams don't have the ownership and autonomy which is the secret sauce to turbo-charge motivation
+    and productivity.</strong></p>
+
+<p>
+  Some autonomy for each squad doesn't (shouldn't) mean the wild west.. we can have an agreed core tech stack and
+  approach. But if we don't let responsible developers innovate, we're not going to improve anywhere near as
+  quickly.</p>
+<p>It's natural and unavoidable for humans and teams to seek control over what they're doing, as per <a
+  href="https://www.thoughtworks.com/insights/articles/demystifying-conways-law">Conway's law</a> which constantly
+  re-proves itself in software teams.</p>
+<h2>What does good look like?</h2>
+<p>How do several teams contribute to the same product in a co-ordinated way?</p>
+<ol>
+  <li>Any developer, whether experienced or new, has a good chance of being able to quickly and safely make a change to
+    a system. Ideally, this shouldn't require any of:
+    <ul>
+      <li>reading copious documentation (if it's copious, it's almost certainly out of date)</li>
+      <li>extensive consulting with in-house experts on the pitfalls and how to avoid them</li>
+      <li>manual regression testing - there has to be good coverage at some level, preferably both unit and end-to-end
+        tests
+      </li>
+      <li>waiting a long time (days rather than hours) for gatekeepers to allow the feature through to production, which
+        might involve pull request approvals, extensive manual testing, troubleshooting build failures
+      </li>
+    </ul>
+  </li>
+  <li>
+    Each individual feature development team can deploy their stuff independently to production, at the times of their
+    choosing. They shouldn't be blocked in a single CI pipeline behind other features that are being tested or are having a
+    problem investigated.
+  </li>
+  <li>
+    Developers have the space to innovate (and if the new library, tool or technique works, it can be propagated to
+    other similar systems in a controlled way; if not, it's quick to back it out).
+  </li>
+  <li>
+    Code releases to production are small, focussed and frequent. If something goes wrong we can quickly work out what
+    caused it - because the released commit, and the affected service are both narrow in scope, issues are faster to
+    debug.
+  </li>
+  <li>
+    Many of the advantages of the monolith are retained:
+    <ul>
+      <li>Common Javascript libs are shared not duplicated, to enable caching and good performance</li>
+      <li>The user's experience of navigating around the website is slick and coherent. The UI looks consistent and uses
+        async page navigation where possible.
+      </li>
+      <li>Conventions and code are easily shared, whether it's linting rules, config, utilities or UI components</li>
+      <li>It should be quick and simple for a developer to run the site locally (or at least the parts they're
+        interested in)
+      </li>
+    </ul>
+  </li>
+</ol>
+<h2>
+  Is it enough to break the monolith up into modules?</h2>
+<p>The modules can then be NPM installed into a single codebase. We've gained modularity; developers can more easily see
+  where to make a change. Good enough?</p>
+<p>
+  Nope - having independent deployment pipelines for each part of the system is absolutely key, for reasons 2 - 4
+  above.</p>
+<h2>
+  Micro-frontends</h2>
+<p>
+  Micro-frontends are one solution to the problem of monolithic front end codebases. They also come with their own set
+  of challenges and overheads. I'll cover these, with an example setup and repo, in the next post.</p>
