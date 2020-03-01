@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import {createBrowserHistory} from 'history';
 import { Provider } from 'react-redux';
-import { Promise } from 'es6-promise-polyfill';
 import storeFactory from '../common/utils/store-factory';
 import App from '../common/containers/App';
 import analytics from './analytics';
