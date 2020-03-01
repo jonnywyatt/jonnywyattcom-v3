@@ -24,7 +24,7 @@ class Menu extends React.Component {
               href="/articles"
               onClick={this.props.startRouteChange}
             >
-              Articles
+              Posts
             </a>
           </li>
           <li
