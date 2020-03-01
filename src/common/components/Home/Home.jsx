@@ -11,7 +11,7 @@ class Home extends React.Component {
     return (
       <div className="view home">
         <MobileAnim />
-        <p className="margin-top-none"><a className="icon-text icon-text--sm" href="/articles/front-end-at-financial-times" onClick={this.props.startRouteChange}><i className="icon-chevron-right-blue padding-right-xs" />New article - <span className="text-bold">'Front end development at the FT'</span></a></p>
+        <p className="margin-top-none"><a className="icon-text icon-text--sm" href="/articles/scaling-frontend-codebases-part-1" onClick={this.props.startRouteChange}><i className="icon-chevron-right-blue padding-right-xs" />New post - <span className="text-bold">'Scaling front end codebases'</span></a></p>
         <p>The core of my skillset is front end and I’ve added over 5 years’ solid experience in
           Node.js. I have a good handle on the array of developments in the Javascript
           space, plus the experience to know which of them to benefit from. I’m passionate about
@@ -28,7 +28,8 @@ class Home extends React.Component {
           <p className="heading heading--4">page load performance</p>
           <p className="heading heading--4">accessibility</p>
           <p className="heading heading--4">Javascript</p>
-          <p className="heading heading--4">microservices</p>
+          <p className="heading heading--4">Typescript</p>
+          <p className="heading heading--4">micro-services including micro-frontends</p>
           <p className="heading heading--4">progressive enhancement</p>
           <p className="heading heading--4">TDD & automated tests</p>
           <p className="heading heading--4">responsive</p>
@@ -36,7 +37,6 @@ class Home extends React.Component {
           <p className="heading heading--4">agile</p>
           <p className="heading heading--4">mobile</p>
           <p className="heading heading--4">rapid prototyping</p>
-          <p className="heading heading--4">React Native</p>
         </div>
       </div>
     );
