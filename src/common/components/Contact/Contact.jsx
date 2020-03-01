@@ -13,7 +13,7 @@ class Contact extends React.Component {
             <div className="col-12-sm">
               <div className="icon-text icon-text--lg">
                 <i className="icon-envelope" />
-                <span className="text-lg">jonnywyatt (at) yahoo.co.uk</span>
+                <span className="text-lg">jonnywyatt2 (at) gmail.com</span>
               </div>
             </div>
           </div>
