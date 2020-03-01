@@ -25,17 +25,18 @@ class Home extends React.Component {
           <p className="heading heading--4">React</p>
           <p className="heading heading--4">scalable CSS including CSS-in-JS</p>
           <p className="heading heading--4">Node.js</p>
-          <p className="heading heading--4">page load performance</p>
-          <p className="heading heading--4">accessibility</p>
           <p className="heading heading--4">Javascript</p>
           <p className="heading heading--4">Typescript</p>
-          <p className="heading heading--4">micro-services including micro-frontends</p>
+          <p className="heading heading--4">page load performance</p>
+          <p className="heading heading--4">accessibility</p>
+          <p className="heading heading--4">micro-services</p>
+          <p className="heading heading--4">micro-frontends</p>
           <p className="heading heading--4">progressive enhancement</p>
-          <p className="heading heading--4">TDD & automated tests</p>
-          <p className="heading heading--4">responsive</p>
+          <p className="heading heading--4">TDD & unit tests</p>
+          <p className="heading heading--4">BDD & end-to-end tests</p>
+          <p className="heading heading--4">responsive / mobile web</p>
           <p className="heading heading--4">CI / CD</p>
           <p className="heading heading--4">agile</p>
-          <p className="heading heading--4">mobile</p>
           <p className="heading heading--4">rapid prototyping</p>
         </div>
       </div>
