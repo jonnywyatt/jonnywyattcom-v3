@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "heroku local web",
-    "mongo-local": "mongod --dbpath=./data",
+    "mongo-local": "mongod --dbpath=/System/Volumes/Data/data/db",
     "start-dev": "nodemon -e js,jsx,hbs,json --watch src/ --exec node server.js",
     "start-prod": "NODE_ENV=production node server.js",
     "build-prod": "npm run build-app && NODE_ENV=production webpack -p",

@@ -3,7 +3,7 @@ import logger from '../../../common/utils/logger';
 
 const uristring =
   process.env.MONGODB_URI ||
-  'mongodb://localhost/heroku_d1zh687g';
+  'mongodb://localhost/local';
 
 mongoose.connect(uristring, (err) => {
   if (err) {
