@@ -3,6 +3,19 @@ import PropTypes from 'prop-types';
 
 class Article extends React.Component {
   componentDidMount() {
+    const scriptTag = document.getElementById('disqus-script');
+    if (!scriptTag) {
+      const script = document.createElement('script');
+      script.id = 'disqus-script';
+      script.onload = this.loadDisqus;
+      script.src = "https://jonnywyatt-com.disqus.com/embed.js";
+      document.body.appendChild(script);
+      return;
+    }
+    this.loadDisqus();
+  }
+
+  loadDisqus() {
     window.DISQUS && window.DISQUS.reset({
       reload: true,
       config: function () {
@@ -11,6 +24,7 @@ class Article extends React.Component {
       }
     });
   }
+
   render () {
     return (
       <div className="article">
@@ -26,8 +40,7 @@ class Article extends React.Component {
           <time dateTime={this.props.createdDate}>{this.props.createdDateDisplay}</time>
         </div>
         <div className="padding-bottom-lg margin-bottom-lg" dangerouslySetInnerHTML={{ __html: this.props.contents }} />
-        <div id="disqus_thread"></div>
-        <script src="https://jonnywyatt-com.disqus.com/embed.js" defer></script>
+        <div id="disqus_thread" />
       </div>
     );
   }
