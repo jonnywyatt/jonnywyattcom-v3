@@ -35,6 +35,9 @@ app.use('/public', express.static(path.join(__dirname, '../../public'), {
   maxAge: 31536000000
 }));
 
+app.get('/vkbgnfrq9euw66gexratpfvgffojmo.html', (req, res) => {
+  res.send('vkbgnfrq9euw66gexratpfvgffojmo');
+});
 
 const env = app.get('env');
 const appConfig = require(`../../config/${env}.json`);
