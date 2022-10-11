@@ -11,15 +11,9 @@ class Home extends React.Component {
     return (
       <div className="view home">
         <MobileAnim />
-        <p className="margin-top-none"><a className="icon-text icon-text--sm" href="/articles/scaling-frontend-codebases-part-1" onClick={this.props.startRouteChange}><i className="icon-chevron-right-blue padding-right-xs" />New post - <span className="text-bold">'Scaling front end codebases'</span></a></p>
-        <p>The core of my skillset is front end and I’ve added over 5 years’ solid experience in
-          Node.js. I have a good handle on the array of developments in the Javascript
-          space, plus the experience to know which of them to benefit from. I’m passionate about
-          web performance and know how to measure and achieve it.</p>
-        <p>I understand every angle of a successful agile team including DevOps, cross-disciplinary
-          collaboration, user-centred testing and design, lean UX, early & continuous delivery,
-          TDD, test automation and how to funnel business requirements through user
-          stories.</p>
+        <p className="margin-top-none"><a className="icon-text icon-text--sm" href="/articles/agile-for-new-devs" onClick={this.props.startRouteChange}><i className="icon-chevron-right-blue padding-right-xs" />New post - <span className="text-bold">'An intro to agile for new devs'</span></a></p>
+        <p>The core of my skillset is front end, including expertise in React, page load performance, accessibility and authoring UI component libraries. I also have 8 years’ solid experience of Node.js.</p>
+        <p>I understand every angle of a successful agile team including user-centred research and design, continuous delivery, TDD, test automation & strategy, pairing and shared ownership of quality and dev-ops.</p>
         <div className="margin-bottom-ml">I have skills in:</div>
         <div className="columns columns--2">
           <p className="heading heading--4">React</p>
