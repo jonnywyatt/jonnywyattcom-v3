@@ -16,22 +16,22 @@ class Home extends React.Component {
         <p>I understand every angle of a successful agile team including user-centred research and design, continuous delivery, TDD, test automation & strategy, pairing and shared ownership of quality and dev-ops.</p>
         <div className="margin-bottom-ml">I have skills in:</div>
         <div className="columns columns--2">
-          <p className="heading heading--4">React</p>
-          <p className="heading heading--4">scalable CSS including CSS-in-JS</p>
-          <p className="heading heading--4">Node.js</p>
-          <p className="heading heading--4">Javascript</p>
-          <p className="heading heading--4">Typescript</p>
-          <p className="heading heading--4">page load performance</p>
-          <p className="heading heading--4">accessibility</p>
-          <p className="heading heading--4">micro-services</p>
-          <p className="heading heading--4">micro-frontends</p>
-          <p className="heading heading--4">progressive enhancement</p>
-          <p className="heading heading--4">TDD & unit tests</p>
-          <p className="heading heading--4">BDD & end-to-end tests</p>
-          <p className="heading heading--4">responsive / mobile web</p>
-          <p className="heading heading--4">CI / CD</p>
-          <p className="heading heading--4">agile</p>
-          <p className="heading heading--4">rapid prototyping</p>
+          <p className="heading heading--4 text-bold">React</p>
+          <p className="heading heading--4 text-bold">scalable CSS including CSS-in-JS</p>
+          <p className="heading heading--4 text-bold">Node.js</p>
+          <p className="heading heading--4 text-bold">Javascript</p>
+          <p className="heading heading--4 text-bold">Typescript</p>
+          <p className="heading heading--4 text-bold">page load performance</p>
+          <p className="heading heading--4 text-bold">accessibility</p>
+          <p className="heading heading--4 text-bold">micro-services</p>
+          <p className="heading heading--4 text-bold">micro-frontends</p>
+          <p className="heading heading--4 text-bold">progressive enhancement</p>
+          <p className="heading heading--4 text-bold">TDD & unit tests</p>
+          <p className="heading heading--4 text-bold">BDD & end-to-end tests</p>
+          <p className="heading heading--4 text-bold">responsive / mobile web</p>
+          <p className="heading heading--4 text-bold">CI / CD</p>
+          <p className="heading heading--4 text-bold">agile</p>
+          <p className="heading heading--4 text-bold">rapid prototyping</p>
         </div>
       </div>
     );
