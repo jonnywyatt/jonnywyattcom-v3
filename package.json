@@ -54,7 +54,7 @@
     "lodash.compact": "^3.0.1",
     "lodash.get": "^4.4.2",
     "mini-css-extract-plugin": "^0.9.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
     "nanoajax": "^0.4.3",
