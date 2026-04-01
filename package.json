@@ -58,7 +58,7 @@
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
     "nanoajax": "^0.4.3",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.3",
     "nodemon": "^2.0.2",
     "path-to-regexp": "^6.1.0",
     "prop-types": "^15.7.2",
